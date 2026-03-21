@@ -1,0 +1,294 @@
+<html>
+<head>
+    <title>O mnie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div id="main">
+        <a href="Główna.html" id="Back"> Powrót</a>
+<audio id="backSound" src="au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+  });
+</script>
+        <p id="Nagłówek">O mnie</p>
+
+        <div id="O-mnie">     
+   <img src="ja.JPG" style="width:225px; height:400px; position:absolute; top:60px; left:30px; border:8px black double; z-index:1; filter:brightness(130%) saturate(80%);   
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAACjklEQVR4AeycUU7DQAxEDSfmKNwYhIRQ95Vo5HoC23YiRapjZ+y8teaDD14rl5VAgFpxVgVogJoJmOWyoQFqJmCWy4YGqJmAWW77DX2r+ri8zd9vl9seqP2LTxYMUDPgAN0AqHmEVe7SL79+r9mqr2eXd212ZUPNBxKgAWomYJazb+ilv/32m/Oz5r3qpXPz/cLFPGOUj0M70PFEdy4QoOYDDNDdgNKTlP+xXn3PtN49j5o3G6oINfMB2gSmygNUEWrmTwf67YE/f9PkfPQ41nfz1Kce8+74dKDugXfXC1DzCQXobkCVx3Fe1v91np6q5uF8Ks6GKkLNfIA2ganyAFWEmvkxUHoS+7s9ivoqVv3V/Eqf+TFQCj57HKDmDQjQ/wZKz6FHMWZ9Y35LKftzPsas7w6RDe0SE/UBKgB10wHaJSbqJdCup7CeHiXmsafZn/Opht16CVQ1TH4lEKArj3EUoGOEq4AESg9aX7+OWN/1oGvF2RP253xKvVsvgaqGya8EAnTlMY4CdIxwFWgDpafQoxizfm1vj64E2Z/zMWb9laB40AYq9J4+HaDmFQjQ3YAqz6FHmeeXcqq/ml82QEE2FECmYYBOCeL9AAWQaTgGSo9SnsR6fsDZec6n+nE+FY+BqgbPlg9Q84kH6L0BpWdxfnoY67t56lOP+aqyPsqGWnFW/vedmWeAbgeUHkXPY8x69UHTevZn3NVX88ZDFaFmPkCbwFR5gCpCzbwdKD2JMedjnh6nYr6v9FU93+/GdqDdAR6tPkDNJxqgjw5UeZzKm/kcyR0+z4YeorktEaC3cTt8K0AP0dyW2B7o7p5J7NsD5cC7xwFqPqEADVAzAbNcNjRAzQTMctlQM9BPAAAA//8SRxHUAAAABklEQVQDANzTsLh0UHMgAAAAAElFTkSuQmCC') 28 /  15px / 0 round;
+    border-width:  16px;
+    border-style:  solid; 
+  }
+  ">
+<img src="6.png" style="position:absolute; left:300; top:100; height:50px; filter: saturate(120%) drop-shadow(0px 0px 1.5px white)">
+<img src="6.png" style="position:absolute; left:420; top:130; height:50px; filter: saturate(120%) drop-shadow(0px 0px 1.5px white)">
+<img src="kit6.gif" style="position:absolute; left:-30; top:850; height:70px; width:112%" >
+<img src="kit3.gif" style="position:absolute; left:370; top:360; height:115px; filter: saturate(120%) drop-shadow(0px 0px 1.5px white)">
+<img src="spirala.gif" style="position:absolute; left:330; top:230; height:50px; filter: saturate(120%) drop-shadow(0px 0px 3px white) hue-rotate(160deg);">
+
+    <h3 style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:340px; left:60px;">
+  Ja z
+</h3>
+
+<p id="Luna" style="display:inline; margin:0; position:absolute; bottom:340px; left:120px;">
+  <a id="Luna2" href="Luna.html">kitem</a>
+</p>
+
+<h3 style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:340px; left:170px;">
+  (7.12.2025)
+</h3>
+
+<audio id="clickSound" src="miau.flac" preload="auto"></audio>
+
+<!-- BACK -->
+
+<audio id="backSound" src="au.mp3" preload="auto"></audio>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // LUNA
+  const lunaLink = document.getElementById('Luna2');
+  const lunaAudio = document.getElementById('clickSound');
+  if (lunaLink && lunaAudio) {
+    lunaLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      lunaAudio.currentTime = 0;
+      lunaAudio.play().catch(err => console.log('Luna play err:', err));
+      setTimeout(() => { window.location.href = lunaLink.href; }, 1000);
+    });
+  }
+
+  // BACK
+  const backLink = document.getElementById('Back');
+  const backAudio = document.getElementById('backSound');
+  if (backLink && backAudio) {
+    backLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      backAudio.currentTime = 0;
+      backAudio.play().catch(err => console.log('Back play err:', err));
+      setTimeout(() => { window.location.href = backLink.href; }, 1000);
+    });
+  }
+});
+</script>
+<img src="divider4.gif" style="position:absolute; top:570px; left:-20px;"><img src="divider-ezgif.com-crop(1).gif" style="position:absolute; top:570px; left:320px;">
+        <p style="color:white; text-align:left; font-weight:500; font-family:Playfair Display, serif; text-shadow: 1px 1px 2px gray; position:absolute; bottom:160px; left:0px; text-indent:30px;">Interesuję  się muzyką klasyczną, malarstwem, gram na pianinie, uczę się rysować "studiuje" (?) też psychoanalizę Jungowską, Freuda.   Interesuje mnie kutlura herbaciana. Poza tym zajmuję się fotografią, akwarystyką i roślinami, a przez pewien czas uczyłem się astronomii. Sporo czasu spędzam na łonie przyrody, w lasach, nad rzeką i w górach. <br></p> <p style="color:white; text-align:left; font-weight:500; font-family:Playfair Display, serif; text-shadow: 1px 1px 2px gray; position:absolute; bottom:75px; left:00px; text-indent:60px;">Gdybym mógł życzyć sobie jednej rzeczy, byłoby to to, aby każdy człowiek odnalazł swoje miejsce w świecie, zatrzymał się  na chwilę i doświadczył prawdziwego, dogłębnego , świętego spokoju. Ukojenia, pustki, bezruchu, stałości,  jedności ze światem. Przynajmniej raz, przynajmniej na chwilę.</p>
+  <p style="color:white; text-align:left; font-weight:500; font-family:Playfair Display, serif; text-shadow: 1px 1px 2px gray; position:absolute; bottom:35px; left:0px; text-indent:30px;">Na ziemi goszczę od 21 dnia, dwunastego, zimowego miesiąca 07 roku; wieku bieżącego (dwudziestegopierwszego).</p></div>
+
+    </div>
+<div id="kontakt">
+<p id="Mail"> Kontakt ze mna: <br>  LesnyElf@proton.me</p>
+<p style="color: black; filter: opacity(0.5); margin-left:30px; margin-top:50px;">/* Mój przycisk? */</p>
+<img src="mailbat.gif" style="width:; heoght:; position:absolute; bottom:100; left:190;">
+
+</div>
+
+<div id="media">
+<p style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:-400px; left:1000px">Muzyka, którą słucham</p>
+<p style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:-420; left:1000">Filmy</p>
+<p style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:-440px; left:1000">Książki?</p>
+<p style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:-460px; left:1000">gry</p>
+</div>
+
+<img src="vanits.jpg" style="position:absolute; left:970; top:350; height:200px; width:200px; border:3px white double">
+<img src="border.jpg" style="position:absolute; left:90; top:100; height:50px; width:; border:  "><img src="border.jpg" style="position:absolute; left:517; top:100; height:50px; width:; border:  "><img src="border.jpg" style="position:absolute; left:857; top:100; height:50px; width:; border:  ">
+<img src="border.jpg" style="position:absolute; left:90; top:1850; height:50px; width:; border:  "><img src="border.jpg" style="position:absolute; left:517; top:1850; height:50px; width:; border:  "><img src="border.jpg" style="position:absolute; left:857; top:1850; height:50px; width:; border:  ">
+
+
+ <audio autoplay loop>
+  
+  <source src="Rem1.flac" type="audio/mpeg">
+
+        </audio>
+  
+
+    </body>
+<style>
+
+    #main {
+        width: 1200px;
+        height: 1800px;
+        background-image: url('Floral 3.png');
+        background-size: 20%;
+        position: absolute;
+        top: 90px;
+        left: 80px;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAABB0lEQVR4AdTU0aqDYAwD4On7v/PmV4jUoojebRCSJm34twNn/Y7PZ/uwNvo8YbvB6jhYtk803sbF4hnLA3k0PpQyekk0P4eYD13bCapUyOiLPOBP8CH7cjPQa4SBtkiH6TMkx/2O3v9QBgsKaKCvIAe5OxpDvTQGtvQU7pRhqJf2Emaf7/TcV14vJWZ4VzZz9+mplzLm0ptZj+L9pW9K5o1CxX/4Uk+fX+fJ7N5Xx/Wb9mNmn+/03Fdcv6nAgO9KznJ3uafrpTGwIwHQV5CD3B2NoV46g8z4Co5lWCENdP3rIyBmFuPxO/iQPSzn4SolQAhCDLSsMx94WN5xKLXUQ7OjM557ff4BAAD///N7sjwAAAAGSURBVAMA6/l4AgThd9oAAAAASUVORK5CYII=') 7 /  13px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+  }
+  
+  #Mail{
+color:#240000;
+font-family: Cormorant Unicase, serif; 
+filter: drop-shadow(2px 2px 4px #520A0A) brightness(120%);
+text-indent:30px;
+ margin-top:30px;
+margin-left:10px; 
+font-weight:600; 
+font-size:105%;
+transition: transform 0.3s;
+animation-name: floating;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+#Mail:hover{
+color:white;
+text-decoration:underline;
+filter: drop-shadow(0px 0px 4px);
+transform:  scale(10);
+}
+  
+    
+
+    #body {
+        background-image: url('tlo5.gif');
+        background-size: 30%;
+              cursor: url('cursor6.png'), auto;        
+}
+
+  :root {
+    --borderwidth: 40px; /* Zdefiniuj zmienną w :root */
+}
+
+#O-mnie {
+    width: 500px;
+    height: 900px;
+    background-image: url("Holicbackgound.png");
+    background-size: 25%;
+    position: absolute;
+    left: 90px;
+    top: 190px;
+    border: var(--borderwidth) solid transparent; 
+    border-image-source: url("lace-white.png"); 
+    border-image-slice: 84; 
+    border-image-repeat: round; 
+    border-image-outset: 1; 
+    
+}
+
+#Luna {
+    color: black;
+    font-family: "Jacquard 24", system-ui;
+    filter: drop-shadow(0px 0px 2px white) brightness(120%);
+    margin: 30px 0 0 10px;
+    font-weight: 600; 
+    position:absolute;
+    top:485px;
+    left:94px;
+
+    font-size: 135%;
+    animation: floating 3s infinite ease-in-out; /* Ta sama linia animująca */
+}
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+#Luna2{
+ color: #1b1b1c;
+    font-family: "Jacquard 24", system-ui;
+    filter: drop-shadow(0px 0px 2px white) brightness(120%);
+    margin: 30px 0 0 10px;
+    font-weight: 600; 
+    position:absolute;
+top:-3px;
+left:-30px;
+    text-decoration:none;
+
+    font-size: 135%;
+}
+#Luna2:hover{
+color:white;
+text-decoration:underline;
+filter: drop-shadow(0px 0px 6px red);
+cursor: url('raven2_cursor.png'), auto;    
+}
+
+  
+    
+                          
+#Back{
+color:white; 
+text-align:center; 
+font-family: Cormorant Unicase, serif; 
+text-shadow: 2px 2px 2px; 
+margin-left:20px;
+position:relative;
+top:80px;
+font-size:120%;
+
+}
+
+#Back:hover{
+color:#6c1a1a;
+filter:drop-shadow(0px 0px 4px white);
+cursor: url('raven2_cursor.png'), auto;    
+}
+
+
+#kontakt{
+background-image:url("tlo2.jpg");
+filter: hue-rotate(340deg) drop-shadow(0px 0px 4px #748761);
+background-size:30%;
+width:300px;
+height:200px;
+position:absolute;
+top:650px;
+left:900px;
+border:6px double #8A3917;
+     animation: borderChange 2s infinite; /* Dodanie animacji */
+
+}
+
+@keyframes borderChange {
+    0% {
+        border-color: #8A3917; /* Kolor początkowy */
+    }
+    50% {
+        border-color: #7D0000; /* Kolor w połowie trwania */   
+    }
+}
+
+#Nagłówek{
+color:white;
+ text-align:center; 
+text-shadow: 2px 2px 2px; 
+margin-top:40px; 
+font-family:"Jacquard 24", system-ui;
+font-size:300%;
+}
+  
+</style>
+
+
+</html>
+
