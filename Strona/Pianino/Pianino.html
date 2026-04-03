@@ -17,7 +17,13 @@
 
 
 <body>
-<div id="header">
+<div id="header"> 
+
+<img src="Obrazki/8.jpg" style="position:absolute; left:; top:; height:50%;">
+<img src="Obrazki/8alt.jpg" style="position:absolute; left:; top:160; height:50%;">
+
+<img src="Obrazki/82.jpg" style="position:absolute; left:1090; top:; height:50%;">
+<img src="Obrazki/8alt2.jpg" style="position:absolute; left:1090; top:160; height:50%;">
 
 <audio id="bgMusic" src="Audio/Clair de Lune.flac" autoplay loop></audio>
 <script>
@@ -42,11 +48,11 @@
   }, 900);
 </script>
 
-<img src="Obrazki/7.jpg" style="height:170px; width:; position:absolute; top:120px; left:30px;">
-<img src="Obrazki/2.jpg" style="height:170px; width:; position:absolute; top:100px; left:880px; filter:;">
 
 
-<a href="../Główna/Index.html" id="Back"> Powrót</a>
+
+
+<a href="../Główna/Główna.html" id="Back"> P<br>o<br>w<br>r<br>ó<br>t</a>
 <audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
 
 <script>
@@ -56,20 +62,19 @@
   backLink.addEventListener('click', function(e) {
     e.preventDefault();
     backSound.currentTime = 0;
-    backSound.play().catch(()=>{}); // powinno działać jako kliknięcie użytkownika
-    // przekieruj po czasie trwania dźwięku lub po 500ms jako kompromis
+    backSound.play().catch(()=>{}); 
     const wait = Math.min(1000, Math.ceil(backSound.duration ? backSound.duration*1000 : 500));
     setTimeout(()=> window.location.href = backLink.href, wait);
   });
 </script>
 </div>
 <div id="główna">
-
-<img src="Obrazki/3.jpg" style="height:180px; width:;position:absolute; top:250px; left:100px; border:2px white solid;">
+<img src="Obrazki/3.jpg" style="height:180px; width:; position:absolute; top:420px; left:330px; border:2px white solid;">
 <img src="Obrazki/witraz.jpg" style="height:160px; width:;position:absolute; top:420px; left:920px; border:2px white solid;">
 <img src="Obrazki/5.jpg" style="height:290px; width:; position:absolute; top:50px; left:960px;border:2px white solid;">
 <img src="Obrazki/6.jpg" style="height:180px; width:; position:absolute; top:40px; left:20px; border:2px gray solid;">
-<img src="Obrazki/piano.jpg" style="height:180px; width:; position:absolute; top:410px; left:320px; border:2px white solid;">
+<img src="Obrazki/7.jpg" style="height:180px; width:; position:absolute; top:245px; left:70px; border:1.5px white solid;">
+<img src="Obrazki/piano.jpg" style="height:180px; width:; position:absolute; top:400px; left:595px; border:2px white solid;">
 
 <div id="divztekstem">
 <img src="Obrazki/x30.gif" style="height:; width:; position:absolute; top:200px; left:400px;">
@@ -79,47 +84,51 @@ prawdziwe, drewniane pianino akustyczne. Moim wymarzonym utworem do nauczenia si
 Clair de Lune Debussiego, i Nokturn op.27 no.2 F.Chopina.</p>
 </div>
 
-    <div id="progres">
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:70px; font-size:120%;">Aktualnie pracuję nad Nokturnem F-moll op.55 no.1, aktualny progres:</p> 
-<video onloadstart="this.volume=0.25"width="800" height="600"  controls style="position:absolute; top:10px; left:50px; border:0px gray solid; filter:drop-shadow(0px 0px 4px white) brightness(110%)">
-  <source src="Filmy/Nokturn f-moll.mp4" type="video/mp4">
-</video>
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 Kwietnia 2026</p>
-    </div>
+<div id="progres">
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:70px; font-size:120%;">Aktualnie pracuję nad Nokturnem F-moll op.55 no.1, aktualny progres:</p>
+  <video onloadstart="this.volume=0.25" width="800" height="600" controls style="position:absolute; top:10px; left:50px; border:0px gray solid; filter:drop-shadow(0px 0px 4px white) brightness(110%)">
+    <source src="Filmy/Nokturn f-moll.mp4" type="video/mp4">
+  </video>
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 Kwietnia 2026</p>
+  <p id="Więcej">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots1">...</span><span id="more1">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+  <button onclick="toggleMore(1)" id="myBtn1">Read more</button>
+</div>
 
-    <div id="Nokturncis">
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Nokturn cis-moll no.20 posth.</p>
-<video onloadstart="this.volume=0.20" width="800" height="600"  controls style="position:absolute; top:10px; left:50px;  filter:drop-shadow(0px 0px 4px white);">
-  <source src="Filmy/Nokturn Cis-moll.mp4" type="video/mp4">
-</video>
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%">Filmik z 1 Kwietnia 2026</p>
-    </div>
+<div id="Nokturncis">
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Nokturn cis-moll no.20 posth.</p>
+  <video onloadstart="this.volume=0.20" width="800" height="600" controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
+    <source src="Filmy/Nokturn Cis-moll.mp4" type="video/mp4">
+  </video>
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%">Filmik z 1 Kwietnia 2026</p>
+  <p id="Więcej2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots2">...</span><span id="more2">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+  <button onclick="toggleMore(2)" id="myBtn2">Read more</button>
+</div>
 
-    <div id="Waltz">
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Waltz a-moll </p> 
-<video onloadstart="this.volume=0.15" width="800" height="600"  controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
-  <source src="Filmy/Waltz.mp4" type="video/mp4">
-</video>
+<div id="Waltz">
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Waltz a-moll</p>
+  <video onloadstart="this.volume=0.15" width="800" height="600" controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
+    <source src="Filmy/Waltz.mp4" type="video/mp4">
+  </video>
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 kwietnia 2026</p>
+  <p id="Więcej3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots3">...</span><span id="more3">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+  <button onclick="toggleMore(3)" id="myBtn3">Read more</button>
+</div>
 
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 kwietnia 2026</p>
-    </div>
-
-    <div id="PreludeE">
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Preludium E. Op.24 no.4</p> 
-<video width="800" height="600"  controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
-  <source src="Filmy/prelu.MOV" type="video/mp4">
-</video>
-<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z x 2026</p>
-    </div>
-
-
-
-
-
+<div id="PreludeE">
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Preludium E. Op.24 no.4</p>
+  <video width="800" height="600" controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
+    <source src="Filmy/prelu.MOV" type="video/mp4">
+  </video>
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z x 2026</p>
+  <p id="Więcej4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots4">...</span><span id="more4">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+  <button onclick="toggleMore(4)" id="myBtn4">Read more</button>
 </div>
 
 
+<audio id="bgMusic" src="bg.mp3" loop></audio>
+
 <script>
+
 const bg = document.getElementById('bgMusic');
 
 function anyVideoPlaying() {
@@ -128,11 +137,12 @@ function anyVideoPlaying() {
 }
 
 function stopBg() {
-  if (!bg.paused) bg.pause();
+  if (bg && !bg.paused) bg.pause();
 }
 function resumeBgIfNoVideo() {
+  if (!bg) return;
   if (!anyVideoPlaying()) {
-    bg.play().catch(()=>{/* autoplay może wymagać gestu użytkownika */});
+    bg.play().catch(()=>{});
   }
 }
 
@@ -144,7 +154,6 @@ function attachListeners(video) {
   video.addEventListener('ended', resumeBgIfNoVideo);
   video._attached = true;
 }
-
 document.querySelectorAll('video').forEach(attachListeners);
 
 const mo = new MutationObserver(muts => {
@@ -156,9 +165,33 @@ const mo = new MutationObserver(muts => {
   });
 });
 mo.observe(document.body, { childList: true, subtree: true });
+
+
+function toggleMore(n) {
+  var dots = document.getElementById('dots' + n);
+  var moreText = document.getElementById('more' + n);
+  var btnText = document.getElementById('myBtn' + n);
+
+  if (!dots || !moreText || !btnText) return;
+
+  if (dots.style.display === 'none') {
+    dots.style.display = 'inline';
+    btnText.innerHTML = 'Read more';
+    moreText.style.display = 'none';
+  } else {
+    dots.style.display = 'none';
+    btnText.innerHTML = 'Read less';
+    moreText.style.display = 'inline';
+  }
+}
 </script>
+
 </body>
 <style>
+
+  #more1, #more2, #more3, #more4 { display: none; }
+  #myBtn1, #myBtn2, #myBtn3, #myBtn4 {background-color:black; color:white; border-color:brown; margin-left:15px;}
+  #Więcej,   #Więcej2,   #Więcej3,   #Więcej4 {color:white; padding:15px}
 
     body {
 background-image:url("Tła/tlo9.png");
@@ -166,32 +199,35 @@ cursor: url('Kursor/cursor6.png'), auto;
 }
 
     #header{
-background-image:url("Tła/tlo7 (kopia).png");
-width:85%;
-height:300px;
+background-image:url("Obrazki/h3.jpg");
+background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+background-size:80%;
+background-color:#25244F;
+width:87%;
+height:320px;
 position:absolute;
 top:20px;
-left:105px;
-background-size:;
+left:85px;
 filter: brightness(110%);
 border:7px double;
-animation: borderChange 0.9s infinite; 
+animation: borderChange 3s infinite; 
 }
 
 @keyframes borderChange {
     0% {
-        border-color: #15D61C; 
+        border-color: #B39B1B; 
     }
     25% {
-        border-color: #0940E3; 
+        border-color: #1A2F7D; 
     }
  
 
   50% {
-        border-color: #0940E3; 
+        border-color: #1A2F7D; 
     }
     100% {
-        border-color: #15D61C; 
+        border-color: #B39B1B; 
    
 }
 }
@@ -204,8 +240,12 @@ background-size:10%;
 position:relative;
 top:350px;
 left:70px;
-border:white 2px dotted;
-}
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAKNJREFUOE/tVMENgDAItFM4mNs4gNs4mFNo2kgDeCc16q/9tAm568EBaTjPMo27vOd1S/KOboQr4BzIRP7WMUTOcJXIE4gC/ZkmFkKEM+p0+kg1y8rjCimrm6+t/uiu1mFNPRil7bOqLn/uPjMgaieGM/3IzInIafp6CJ40P8I1T06kVseNUW8VCjFsqVZVzIP/lMr49S1VKsB2a99SlxZG2+0AaNJTv1fynpUAAAAASUVORK5CYII=') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+  }
+  
+  
 
     #divztekstem{
 height:240px;
@@ -241,28 +281,37 @@ position:absolute;
 bottom:-1515px;
 }
 
-    #Back{
-color:white; 
-text-align:center; 
-font-family: Cormorant Unicase, serif; 
-text-shadow: 2px 2px 2px; 
-margin-left:80px;
-position:relative;
-top:30px;
-font-size:200%;
-font-family: "Jacquard 24", system-ui;
-
+#Back{
+  color:#B39B1B;
+  text-align:center;
+  font-family:"Jacquard 24", system-ui;
+  text-shadow:2px 2px 2px rgba(0,0,0,0.3);
+  margin-left:98px;
+  position:relative;
+  top:60px;
+  font-size:170%;
+  text-decoration:none;
+  text-shadow:0px 0px 2px yellow;
+  display:inline-block;
 }
 
-    #Back:hover{
-color:#6c1a1a;
-filter:drop-shadow(0px 0px 4px white);
-cursor: url('Kursor/raven2_cursor.png'), auto;    
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:white;
+  filter:drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
 }
 
 #progres{
 width:900px;
-height:670px;
+height:830px;
 position:absolute;
 left:150px;
 top:640px;
@@ -276,10 +325,10 @@ filter:drop-shadow(0px 0px 6px white);
 
 #Nokturncis{
 width:900px;
-height:670px;
+height:830px;
 position:absolute;
 left:150px;
-top:1410px;
+top:1660px;
 background-image:url("Tła/tlo10.png");
 background-size:25%;
     border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
@@ -290,10 +339,10 @@ filter:drop-shadow(0px 0px 6px white);
   
 #Waltz{
 width:900px;
-height:670px;
+height:830px;
 position:absolute;
 left:150px;
-top:2180px;
+top:2680px;
 background-image:url("Tła/tlo10.png");
 background-size:25%;
     border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
@@ -304,10 +353,10 @@ filter:drop-shadow(0px 0px 6px white);
 
 #PreludeE{
 width:900px;
-height:670px;
+height:830px;
 position:absolute;
 left:150px;
-top:2955px;
+top:3700px;
 background-image:url("Tła/tlo10.png");
 background-size:25%;
     border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
