@@ -1,0 +1,321 @@
+<html>
+<head>
+<title>Pianino</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div id="header">
+
+<audio id="bgMusic" src="Audio/Clair de Lune.flac" autoplay loop></audio>
+<script>
+  const audio = document.getElementById('bgMusic');
+  // Ustaw początkową głośność (0.0 - 1.0)
+  audio.volume = 0.15; // np. 50%
+
+  // Wyłącz automatyczne odtwarzanie przeglądarki na czas opóźnienia
+  audio.pause();
+
+  // Opóźnienie startu o 0.5 sekundy
+  setTimeout(() => {
+    // Spróbuj odtworzyć (niektóre przeglądarki blokują autoplay z dźwiękiem)
+    audio.play().catch(err => {
+      // Jeśli autoplay z dźwiękiem jest zablokowane, spróbuj z ciszej ustawioną głośnością
+      audio.muted = true;
+      audio.play().then(() => {
+        // jeśli chcesz, po chwili odmutuj do ustawionego poziomu
+        setTimeout(() => { audio.muted = false; audio.volume = 0.5; }, 200);
+      }).catch(() => console.warn('Odtwarzanie zablokowane przez przeglądarkę'));
+    });
+  }, 900);
+</script>
+
+<img src="Obrazki/7.jpg" style="height:170px; width:; position:absolute; top:120px; left:30px;">
+<img src="Obrazki/2.jpg" style="height:170px; width:; position:absolute; top:100px; left:880px; filter:;">
+
+
+<a href="../Główna/Index.html" id="Back"> Powrót</a>
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const backSound = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    backSound.currentTime = 0;
+    backSound.play().catch(()=>{}); // powinno działać jako kliknięcie użytkownika
+    // przekieruj po czasie trwania dźwięku lub po 500ms jako kompromis
+    const wait = Math.min(1000, Math.ceil(backSound.duration ? backSound.duration*1000 : 500));
+    setTimeout(()=> window.location.href = backLink.href, wait);
+  });
+</script>
+</div>
+<div id="główna">
+
+<img src="Obrazki/3.jpg" style="height:180px; width:;position:absolute; top:250px; left:100px; border:2px white solid;">
+<img src="Obrazki/witraz.jpg" style="height:160px; width:;position:absolute; top:420px; left:920px; border:2px white solid;">
+<img src="Obrazki/5.jpg" style="height:290px; width:; position:absolute; top:50px; left:960px;border:2px white solid;">
+<img src="Obrazki/6.jpg" style="height:180px; width:; position:absolute; top:40px; left:20px; border:2px gray solid;">
+<img src="Obrazki/piano.jpg" style="height:180px; width:; position:absolute; top:410px; left:320px; border:2px white solid;">
+
+<div id="divztekstem">
+<img src="Obrazki/x30.gif" style="height:; width:; position:absolute; top:200px; left:400px;">
+<p id="tekst">Na pianinie gram od końca Stycznia 2025 roku. Zaczałem grać po części z nudów podczas ferii, jak i z uwagi na to, że mi to imponowało i chciałem nauczyć się grać na jakimś 
+instrumencie, a z czasem się wciągnąłem. Aktualnie gram na pianinie cyfrowym Roland FP-10, ale pewnego dnia chciałbym mieć 
+prawdziwe, drewniane pianino akustyczne. Moim wymarzonym utworem do nauczenia się jest Ballada no.1 op.23 Fryderyka Chopina. W najbliższym czasie zamierzam uczyć się 
+Clair de Lune Debussiego, i Nokturn op.27 no.2 F.Chopina.</p>
+</div>
+
+    <div id="progres">
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:70px; font-size:120%;">Aktualnie pracuję nad Nokturnem F-moll op.55 no.1, aktualny progres:</p> 
+<video onloadstart="this.volume=0.25"width="800" height="600"  controls style="position:absolute; top:10px; left:50px; border:0px gray solid; filter:drop-shadow(0px 0px 4px white) brightness(110%)">
+  <source src="Filmy/Nokturn f-moll.mp4" type="video/mp4">
+</video>
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 Kwietnia 2026</p>
+    </div>
+
+    <div id="Nokturncis">
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Nokturn cis-moll no.20 posth.</p>
+<video onloadstart="this.volume=0.20" width="800" height="600"  controls style="position:absolute; top:10px; left:50px;  filter:drop-shadow(0px 0px 4px white);">
+  <source src="Filmy/Nokturn Cis-moll.mp4" type="video/mp4">
+</video>
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%">Filmik z 1 Kwietnia 2026</p>
+    </div>
+
+    <div id="Waltz">
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Waltz a-moll </p> 
+<video onloadstart="this.volume=0.15" width="800" height="600"  controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
+  <source src="Filmy/Waltz.mp4" type="video/mp4">
+</video>
+
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z 1 kwietnia 2026</p>
+    </div>
+
+    <div id="PreludeE">
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;">Preludium E. Op.24 no.4</p> 
+<video width="800" height="600"  controls style="position:absolute; top:10px; left:50px; filter:drop-shadow(0px 0px 4px white);">
+  <source src="Filmy/prelu.MOV" type="video/mp4">
+</video>
+<p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:585px; font-size:120%;">Filmik z x 2026</p>
+    </div>
+
+
+
+
+
+</div>
+
+
+<script>
+const bg = document.getElementById('bgMusic');
+
+function anyVideoPlaying() {
+  return Array.from(document.querySelectorAll('video'))
+    .some(v => !v.paused && !v.ended && v.readyState > 2);
+}
+
+function stopBg() {
+  if (!bg.paused) bg.pause();
+}
+function resumeBgIfNoVideo() {
+  if (!anyVideoPlaying()) {
+    bg.play().catch(()=>{/* autoplay może wymagać gestu użytkownika */});
+  }
+}
+
+function attachListeners(video) {
+  if (video._attached) return;
+  video.addEventListener('play', stopBg);
+  video.addEventListener('playing', stopBg);
+  video.addEventListener('pause', resumeBgIfNoVideo);
+  video.addEventListener('ended', resumeBgIfNoVideo);
+  video._attached = true;
+}
+
+document.querySelectorAll('video').forEach(attachListeners);
+
+const mo = new MutationObserver(muts => {
+  muts.forEach(m => {
+    m.addedNodes && m.addedNodes.forEach(node => {
+      if (node.tagName === 'VIDEO') attachListeners(node);
+      if (node.querySelectorAll) node.querySelectorAll('video').forEach(attachListeners);
+    });
+  });
+});
+mo.observe(document.body, { childList: true, subtree: true });
+</script>
+</body>
+<style>
+
+    body {
+background-image:url("Tła/tlo9.png");
+cursor: url('Kursor/cursor6.png'), auto;        
+}
+
+    #header{
+background-image:url("Tła/tlo7 (kopia).png");
+width:85%;
+height:300px;
+position:absolute;
+top:20px;
+left:105px;
+background-size:;
+filter: brightness(110%);
+border:7px double;
+animation: borderChange 0.9s infinite; 
+}
+
+@keyframes borderChange {
+    0% {
+        border-color: #15D61C; 
+    }
+    25% {
+        border-color: #0940E3; 
+    }
+ 
+
+  50% {
+        border-color: #0940E3; 
+    }
+    100% {
+        border-color: #15D61C; 
+   
+}
+}
+
+    #główna{
+width:90%;
+height:9000px;
+background-image:url("Tła/tlo6.gif");
+background-size:10%;
+position:relative;
+top:350px;
+left:70px;
+border:white 2px dotted;
+}
+
+    #divztekstem{
+height:240px;
+width:600px;
+position:absolute;
+top:120px;
+left:310px;
+background-image:url("Tła/tlo10.png");
+background-size:20%;
+border:4px white double;
+filter: brightness(110%) drop-shadow(0px 0px 6px #302699);
+}
+
+
+    #tekst{
+color:#ECE9F7;
+text-shadow:0px 0px 4px white;
+font-size:100%;
+font-weight:600;
+font-family: "Almendra", serif;
+text-indent: 50px;
+line-height: 1.4;
+letter-spacing:1.2px;
+padding:10px;
+margin-top:20px
+}
+    #footer{
+width:100%;
+height:220px;
+background-image:url("Tła/gwiazdki2.png");
+background-size:20%;
+position:absolute;
+bottom:-1515px;
+}
+
+    #Back{
+color:white; 
+text-align:center; 
+font-family: Cormorant Unicase, serif; 
+text-shadow: 2px 2px 2px; 
+margin-left:80px;
+position:relative;
+top:30px;
+font-size:200%;
+font-family: "Jacquard 24", system-ui;
+
+}
+
+    #Back:hover{
+color:#6c1a1a;
+filter:drop-shadow(0px 0px 4px white);
+cursor: url('Kursor/raven2_cursor.png'), auto;    
+}
+
+#progres{
+width:900px;
+height:670px;
+position:absolute;
+left:150px;
+top:640px;
+background-image:url("Tła/tlo10.png");
+background-size:25%;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:drop-shadow(0px 0px 6px white);
+  }
+
+#Nokturncis{
+width:900px;
+height:670px;
+position:absolute;
+left:150px;
+top:1410px;
+background-image:url("Tła/tlo10.png");
+background-size:25%;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:drop-shadow(0px 0px 6px white);
+  }
+  
+#Waltz{
+width:900px;
+height:670px;
+position:absolute;
+left:150px;
+top:2180px;
+background-image:url("Tła/tlo10.png");
+background-size:25%;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:drop-shadow(0px 0px 6px white);
+  }
+
+#PreludeE{
+width:900px;
+height:670px;
+position:absolute;
+left:150px;
+top:2955px;
+background-image:url("Tła/tlo10.png");
+background-size:25%;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:drop-shadow(0px 0px 6px white);
+ 
+}
+
+</style>
+</html>

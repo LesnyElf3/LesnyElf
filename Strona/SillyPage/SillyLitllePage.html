@@ -1,0 +1,39 @@
+<html>
+<body id="body">
+  <a href="../Główna/Index.html" id="Back" style="text-decoration:none; text-shadow:0 0 4px white; position:absolute; top:30px; font-size:70%;">Powrót</a>
+
+  <video id="film" src="internetisdungeon.mp4" autoplay playsinline></video>
+
+  <script>
+    const v = document.getElementById('film');
+    v.volume = 0.3;
+    v.muted = false; // może być zablokowane przez autoplay — wtedy usuń muted i odtwórz po kliknięciu
+  </script>
+
+
+</body>
+
+<style>
+#film{
+width:900px;
+height:850px;
+position:absolute;
+left:240;
+top:-70;
+}
+
+#body{
+background-color:black;
+margin-left:30px;
+}
+
+#Back{
+color:white;
+}
+#Back:hover{
+color:#6c1a1a;
+filter:drop-shadow(0px 0px 4px white);
+}
+</style>
+
+</html>
