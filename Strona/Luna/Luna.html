@@ -80,7 +80,79 @@
 
 
 </body>
+<script>
+// include this line when the page loads
+document.querySelector("body").addEventListener("click", explodeOnClick);
+
+/**
+ * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
+ * e {Event} - object representing the 'click' of the page
+ **/
+function explodeOnClick(e) {
+    let toPopulate = document.createElement("div");
+    toPopulate.classList.add("explode");
+
+    toPopulate.style.top = e.clientY + "px";
+    toPopulate.style.left = e.clientX + "px";
+
+    document.querySelector("body").appendChild(toPopulate);
+
+    setTimeout(() => toPopulate.remove(), 5000);
+
+    // populate 1 star for testing
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        let newStar = document.createElement("p");
+        let j = 0;
+        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
+        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        newStar.textContent = "+";
+        toPopulate.appendChild(newStar);
+    
+        let timerId = setInterval(() => {
+          // Calculate new y position based on the parabolic equation
+          let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
+          let xTrans = xDirection * (xDistance * (j / 100)) + "px";
+          newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
+    
+          j += 1;
+        }, 25);
+    
+        setTimeout(() => {
+          clearInterval(timerId);
+          newStar.remove();
+        }, 5000);
+      }, Math.floor(i / 3) * 50);
+    }
+  }
+</script>
 <style>
+
+/** This stuff is necessary !! **/
+.explode > p {
+  position: absolute;
+  cursor: inherit;
+}
+
+.explode {
+  transform: translate(-10px,-20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+
+/** Here's just stuff for the demo, to make the effect more obvious **/
+body {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: 'Verdana', 'Arial', sans-serif;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
  body{
 background-image:url("Tła/Floral 6.png");
 background-size:15%;
@@ -109,13 +181,21 @@ position:relative;
 top:-80px;
 font-size:120%;
 left:200px;
+  display:inline-block;
+}
 
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
 }
 
 #Back:hover{
 color:#6c1a1a;
 filter:drop-shadow(0px 0px 4px white);
 cursor: url('Kursor/raven2_cursor.png'), auto;    
+  animation: shake 0.5s infinite linear;
 }
 
 </style>

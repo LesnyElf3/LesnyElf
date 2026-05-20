@@ -1,0 +1,401 @@
+<html>
+<head>
+<title>Tworzywo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="Main"></div>
+
+
+
+<img src="Tła/kwiatki1.png" style="position:absolute; bottom:400px; left:120px; filter: drop-shadow(0 0 16px purple);">
+<img src="witraze/back.png" style="position:absolute; bottom:420px; left:190px;  z-index: 1; display: inline-block;
+  transform: scaleX(-1);;">
+<a href="../Główna/Główna.html" id="Back">
+<p id="Back"style="color:white; text-shadow:0px 0px 8px white; position:absolute; bottom:415px; left:160px; font-size:100%">P<br>o<br>w<br>r<br>ó<br>t</p>
+</a>
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+  });
+</script>
+<img src="Tła/kwiatki1.png" style="position:absolute; bottom:400px; left:730px;  transform: scaleX(-1); filter: drop-shadow(0 0 16px purple);">
+
+<img src="Tła/sun.gif"  id="sun"style="position:absolute; bottom:420px; left:600px; width:120px; height:120px;">
+
+<img src="witraze/3.jpg"  id="Rysunki"style="position:absolute; bottom:140px; left:820px; width:180px; height:180px;  display: inline-block;   transform: rotate(-10deg);   filter: drop-shadow(0 0 8px white); "> <p class="wiggle">Rysunki</p>
+<img src="witraze/2.jpg"  id="Masterkopie"style="position:absolute; bottom:140px; left:170px; width:150px; height:150px;  display: inline-block;  transform: rotate(2deg);   filter: drop-shadow(0 0 8px white); "> 
+ <p class="wiggle" style="position:absolute; top:540px; left:860px; color:green">Masterkopie</p>
+<img src="witraze/eye4.png"  id="Obrazki"style="position:absolute; bottom:-30px; left:370px; width:170px; height:170px;  display: inline-block;  transform: rotate(30deg);   filter: drop-shadow(0 0 8px white);">
+ <p class="wiggle" style="position:absolute; top:730px; left:1030px; color:yellow">Obrazki</p>
+<img src="witraze/10.jpg"  id="Stare"style="position:absolute; bottom:-160px; left:670px; width:170px; height:170px;  display: inline-block;  transform: rotate(-5deg);   filter: drop-shadow(0 0 8px white);">
+ <p class="wiggle" style="position:absolute; top:860px; left:720px; color:red">Stare rzeczy</p>
+<img src="witraze/11.png"  id="lala"style="position:absolute; bottom:-70px; left:970px; width:180px; height:180px;  display: inline-block;  transform: rotate(10deg);   filter: drop-shadow(0 0 8px white);">
+ <p class="wiggle" style="position:absolute; top:700px; left:440px; color:red">lala</p>
+<img src="witraze/8.jpg"  id="lala2"style="position:absolute; bottom:-270px; left:170px; width:180px; height:180px;  display: inline-block;  transform: rotate(10deg);   filter: drop-shadow(0 0 8px white);">
+ <p class="wiggle" style="position:absolute; top:950px; left:200px; color:red">lala2</p>
+<script>
+const WIGGLE_OFFSET = 2; // This is like how far up and down the letters should go.
+const WIGGLE_NUM_LET = 3; // This is how many letters should be in one 'wave'
+
+// Run this when the page loads
+let toWiggle = document.querySelectorAll(".wiggle");
+
+[...toWiggle].forEach((text) => {
+  wiggle(text);
+});
+
+/**
+ * Given a single text element, makes the text wiggly
+ * text {HTMLElement} - the page element that should be wiggled
+ **/
+function wiggle(text) {
+  let words = text.textContent;
+
+  text.classList.add("wiggle");
+  text.innerHTML = "";
+
+  for (let j = 0; j < words.length; j++) {
+    let sp = document.createElement("span");
+    sp.textContent = words[j];
+    // Maybe some day these letters will be colorful...
+    // sp.style.color = "hsl(" + Math.floor(Math.random() * 361) + ", 100%, 50%)";
+
+    text.appendChild(sp);
+  }
+
+  let loop = 0;
+  let timerId = setInterval(() => {
+    for (let j = 0; j < words.length; j++) {
+      let magicNumber = WIGGLE_NUM_LET * WIGGLE_OFFSET;
+      let yCoord = ((magicNumber) + (WIGGLE_OFFSET * j) + (WIGGLE_OFFSET * loop)) % (magicNumber);
+
+      text.children[j].style.top = yCoord + "px";
+    }
+    loop++;
+  }, 300);
+}
+
+</script>
+<script>
+// include this line when the page loads
+document.querySelector("body").addEventListener("click", explodeOnClick);
+
+/**
+ * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
+ * e {Event} - object representing the 'click' of the page
+ **/
+function explodeOnClick(e) {
+    let toPopulate = document.createElement("div");
+    toPopulate.classList.add("explode");
+
+    toPopulate.style.top = e.clientY + "px";
+    toPopulate.style.left = e.clientX + "px";
+
+    document.querySelector("body").appendChild(toPopulate);
+
+    setTimeout(() => toPopulate.remove(), 5000);
+
+    // populate 1 star for testing
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        let newStar = document.createElement("p");
+        let j = 0;
+        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
+        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        newStar.textContent = "+";
+        toPopulate.appendChild(newStar);
+    
+        let timerId = setInterval(() => {
+          // Calculate new y position based on the parabolic equation
+          let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
+          let xTrans = xDirection * (xDistance * (j / 100)) + "px";
+          newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
+    
+          j += 1;
+        }, 25);
+    
+        setTimeout(() => {
+          clearInterval(timerId);
+          newStar.remove();
+        }, 5000);
+      }, Math.floor(i / 3) * 50);
+    }
+  }
+</script>
+
+
+ <audio autoplay loop>
+  
+  <source src="Audio/Guaranteed.flac" type="audio/mpeg">
+
+        </audio>
+
+
+</body>
+<style>
+
+
+.explode > p {
+  position: absolute;
+  cursor: inherit;
+}
+
+.explode {
+  transform: translate(-10px,-20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+
+/** Here's just stuff for the demo, to make the effect more obvious **/
+body {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: 'Verdana', 'Arial', sans-serif;
+
+
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+
+}
+
+
+
+.wiggle span {
+  position: relative;
+  transition: .5s top;
+}
+
+.wiggle{
+position:absolute;
+top:530px;
+left:190px;
+color:red;
+font-size:140%;
+}
+
+
+Body{
+background-image: url("Tła/1.jpg");
+    cursor: url('Kursor/cursor6.png'), auto;    
+
+}
+#Main{
+    width:1100px;
+    Height:800px;
+    background-image: url("Tła/5.jpg");
+    position:absolute;
+    margin-left:100px;
+    margin-top:300px;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABc0lEQVR4AdTSS47CQBAD0CH3v/OwycvCktVpBSSKjWXXp8sOx3/8/s4f+aQXpL7LLbo7p+8w+Ot4Hfo6f6uDz7aXvl3e5ugw916HavhVPPJy/wkHJ6c3fNqf8+6bk6hk0gkdZr1xCbR620eHOT8vUUlwlJj1xiXR6vZmnQ6zPidRCTQn6Uxfw6f9bX5Oos1BS8wXgNm30ls99+D65yTq8l1sX2JXX71r35xE/QfSGSd39exrfHev++Yk2hxy0pL5tN7ec9+cRNMJzgkuweT0u5jz+Oq9OYlyIhE8nWYd30X7zeGr9+YkygmHkNOTfx3ae+6bk+jKSUbJYep3eZtvuvvmJNqcrBJqc7v66h31OYn6D7h8hfph9q/0Vs89uC80J1GXQw4apzfM+dZHz/7kvsC8RNMJxzDrjUug1ds+Osz5eYlKgqPErDcuiVa3N+t0mPU5iUqgOUln+ho+7c95981JVDIuxxNbPfVdnu/guWdMom8AAAD//4UmgNoAAAAGSURBVAMA8uWAG4TC9q4AAAAASUVORK5CYII=') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+
+  }
+
+
+#Rysunki {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+@keyframes shake-rysynek {
+  0%   { transform: rotate(-5deg) translateX(0); }
+  25%  { transform: rotate(-5deg) translateX(-5px); }
+  50%  { transform: rotate(-5deg) translateX(2px); }
+  75%  { transform: rotate(-5deg) translateX(-5px); }
+  100% { transform: rotate(-5deg) translateX(0); }
+}
+
+#Rysunki:hover {
+  animation: shake-rysynek 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+#Masterkopie {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+@keyframes shake-masterkopie {
+  0%   { transform: rotate(5deg) translateX(0); }
+  25%  { transform: rotate(5deg) translateX(-5px); }
+  50%  { transform: rotate(5deg) translateX(2px); }
+  75%  { transform: rotate(5deg) translateX(-5px); }
+  100% { transform: rotate(5deg) translateX(0); }
+}
+
+#Masterkopie:hover {
+  animation: shake-masterkopie 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+#Obrazki {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+@keyframes shake-Obrazki {
+  0%   { transform: rotate(-10deg) translateX(0); }
+  25%  { transform: rotate(-10deg) translateX(-5px); }
+  50%  { transform: rotate(-10deg) translateX(0px); }
+  75%  { transform: rotate(-10deg) translateX(-5px); }
+  100% { transform: rotate(-10deg) translateX(0); }
+}
+
+#Obrazki:hover {
+  animation: shake-Obrazki 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+#Stare {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+@keyframes shake-stare {
+  0%   { transform: rotate(2deg) translateX(0); }
+  25%  { transform: rotate(2deg) translateX(-5px); }
+  50%  { transform: rotate(2deg) translateX(2px); }
+  75%  { transform: rotate(2deg) translateX(-5px); }
+  100% { transform: rotate(2deg) translateX(0); }
+}
+
+#Stare:hover {
+  animation: shake-stare 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+#lala {
+  display: inline-block;
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+@keyframes shake-lala {
+  0%   { transform: rotate(5deg) translateX(0); }
+  25%  { transform: rotate(5deg) translateX(-5px); }
+  50%  { transform: rotate(5deg) translateX(2px); }
+  75%  { transform: rotate(5deg) translateX(-5px); }
+  100% { transform: rotate(5deg) translateX(0); }
+}
+
+#lala:hover {
+  animation: shake-lala 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+#lala2 {
+  display: inline-block;
+  transform: rotate(0deg);
+  transform-origin: center;
+}
+
+@keyframes shake-lala2 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(0deg) translateX(-5px); }
+  50%  { transform: rotate(0deg) translateX(2px); }
+  75%  { transform: rotate(0deg) translateX(-5px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+#lala2:hover {
+  animation: shake-lala 0.5s infinite linear;
+  filter: drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+#sun{
+      filter: drop-shadow(0 0 6px yellow);
+  animation-name: floating;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+}
+
+
+@keyframes floating {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+
+
+
+}
+
+#Back{
+  color:#B39B1B;
+  text-align:center;
+  font-family:"Jacquard 24", system-ui;
+  text-shadow:2px 2px 2px rgba(0,0,0,0.3);
+  margin-left:-5px;
+  position:relative;
+  top:40px;
+  font-size:140%;
+  text-decoration:none;
+  text-shadow:0px 0px 2px yellow;
+  display:inline-block;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:white;
+  filter:drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+</style>
+</html3
