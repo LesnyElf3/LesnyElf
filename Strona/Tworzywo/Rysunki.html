@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>Szkice</title>
+ <audio autoplay loop>
+  
+  <source src="Audio/Guaranteed.flac" type="audio/mpeg">
+
+        </audio>
+</head>
+<body>
+<div id="header">
+<img src="Obrazki/baner.jpg" style="height:250px; margin-top:15px; margin-left:100px;filter: drop-shadow(0 0 4px white);">
+<a href="Tworzywo.html" id="Back">
+<p id="Back"style="color:white; text-shadow:0px 0px 8px white; position:absolute; bottom:415px; left:160px; font-size:100%">P<br>o<br>w<br>r<br>ó<br>t</p>
+</a>
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+  });
+</script>
+</div>
+<div id="main">
+<img id="szkic" src="Moje/Automatyczne/IMG_0030.JPG" style="height:360px;; top:400px; left:150px; rotate: 0deg">
+<img id="szkic" src="Moje/Automatyczne/IMG_0015.JPG" style="height:390px; top:400px; left:530px; rotate:">
+<img id="szkic" src="Moje/Automatyczne/IMG_0028.JPG" style="height:330px; top:800px; left:250; rotate:90deg">
+<img id="szkic" src="Moje/Automatyczne/IMG_0031.JPG" style="height:380px; top:440px; left:890; rotate:">
+<img id="szkic" src="Moje/Automatyczne/IMG_0032.JPG" style="height:300px; top:860px; left:590; rotate:">
+<img id="szkic" src="Moje/Automatyczne/IMG_0035.JPG" style="height:300px; top:1200px; left:430; rotate:">
+<img id="szkic" src="Moje/Automatyczne/IMG_0036.JPG" style="height:300px; top:1150px; left:150; rotate:">
+<img id="szkic" src="Moje/Automatyczne/IMG_0060.JPG" style="height:370px; top:810px; left:900; rotate:-90deg">
+<img id="szkic" src="Moje/Szkice/IMG_0066.JPG" style="height:340px; top:1630px; left:560; rotate:">
+<img id="szkic" src="Moje/Szkice/IMG_0011.JPG" style="height:400px; top:1180px; left:800; rotate:90deg">
+<img id="szkic" src="Moje/Szkice/IMG_0043.JPG" style="height:280px; top:1600px; left:160; rotate:-90deg">
+<img id="szkic" src="Moje/Szkice/IMG_0008.JPG" style="height:390px; top:1980; left:200; rotate:">
+<img id="szkic" src="Moje/Szkice/IMG_0001.JPG" style="height:380px; top:1630px; left:880; rotate:">
+<img id="szkic" src="Moje/Mandale/IMG_0021.JPG" style="height:350px; top:2000px; left:570; rotate:90deg">
+<img id="szkic" src="Moje/Mandale/IMG_0062.JPG" style="height:300px; top:2370px; left:680; rotate:">
+<img id="szkic" src="Moje/Mandale/IMG_0017.JPG" style="height:300px; top:2500px; left:170; rotate:">
+<img id="szkic" src="Moje/Mandale/IMG_0018.JPG" style="height:390px; top:2670px; left:700; rotate:90deg">
+<img id="szkic" src="Moje/Mandale/IMG_0041.JPG" style="height:250px; top:2050px; left:930; rotate:">
+
+
+</div>
+</body>
+<script>
+// include this line when the page loads
+document.querySelector("body").addEventListener("click", explodeOnClick);
+
+/**
+ * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
+ * e {Event} - object representing the 'click' of the page
+ **/
+function explodeOnClick(e) {
+    let toPopulate = document.createElement("div");
+    toPopulate.classList.add("explode");
+
+    toPopulate.style.top = e.clientY + "px";
+    toPopulate.style.left = e.clientX + "px";
+
+    document.querySelector("body").appendChild(toPopulate);
+
+    setTimeout(() => toPopulate.remove(), 5000);
+
+    // populate 1 star for testing
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        let newStar = document.createElement("p");
+        let j = 0;
+        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
+        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        newStar.textContent = "+";
+        toPopulate.appendChild(newStar);
+    
+        let timerId = setInterval(() => {
+          // Calculate new y position based on the parabolic equation
+          let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
+          let xTrans = xDirection * (xDistance * (j / 100)) + "px";
+          newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
+    
+          j += 1;
+        }, 25);
+    
+        setTimeout(() => {
+          clearInterval(timerId);
+          newStar.remove();
+        }, 5000);
+      }, Math.floor(i / 3) * 50);
+    }
+  }
+</script>
+s
+<style>
+.explode > p {
+  position: absolute;
+  cursor: inherit;
+}
+
+.explode {
+  transform: translate(-10px,-20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+
+/** Here's just stuff for the demo, to make the effect more obvious **/
+body {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: 'Verdana', 'Arial', sans-serif;
+
+
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+
+
+
+}
+Body{
+background-image:url("Tła/ss1s33.gif");
+}
+#main{
+
+background-image:url("Tła/tlo1.jpg");
+background-size:6%;
+height:3000px;
+width:1200px;
+margin-left:60px;
+margin-top:15px;        
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAATlJREFUWEfVmOEOgyAMhOH9H5plyWhcze16RR3dv2nVj/Y4Cr2B3xhtvG/13voxxF+f/2fMjEfPzzh232N9QfwCQh/YFhRVQL0erZhVSi29CqS+Hw3ASh/VjC+1Cu41H9VsPVA2smjGWYbR5PPPneJQALMlBsS06e1MBo2CZ0Gz74c+yqTwOGjWsK8CjSaklwFloke+d3VG2RItr/V3AcqgV/lldkB0CY2KOgsQfa4sqIFnDTiaITUONeZmT9HOXP2wGl8fdPfSW/NSBhRqwu0+Va1l4+trdPeMmkbLgJaZTGVAdyk969q2WUIp6C4dPj0lLA/6VCPNSg7X+qddIAyaPgta7AXk89EyoNnJdNc5KZob6X3930FV7WT7TnXSnjJaBnRVs343az74cYlsIuj5aNT46RK4CPoCwP+MFt1Byc4AAAAASUVORK5CYII=') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+    cursor: url('Kursor/cursor6.png'), auto;   
+  }
+  
+  
+  
+#header{
+background-image:url("Tła/ornate.png");
+width:85%;
+height:300px;
+margin-left:100px;
+ filter: drop-shadow(0 0 8px gray);
+}
+#szkic{
+ position:absolute; 
+ transition: transform 0.3s;
+border:6px #243DA6 double;
+ filter: drop-shadow(0 0 4px #7F8ABA);
+}
+#szkic:hover{
+transform:scale(1.3);
+filter:brightness(110%) contrast(110%)
+}
+
+#Back{
+  color:#B39B1B;
+  text-align:center;
+  font-family:"Jacquard 24", system-ui;
+  text-shadow:2px 2px 2px rgba(0,0,0,0.3);
+  margin-left:-590px;
+  position:relative;
+  top:-120px;
+  font-size:125%;
+  text-decoration:none;
+  text-shadow:0px 0px 2px yellow;
+  display:inline-block;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:yellow;
+  filter:drop-shadow(0 0 8px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+</style>
+</html>
