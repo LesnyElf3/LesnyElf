@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>Ceramika</title>
+</head>
+<body>
+<div id="naglowek">
+<img src="Obrazki/naglowek3.png" style="height:60px; position:absolute; top:50px; left:470px; filter:drop-shadow(0px 0px 7px white)">
+<img src="Tła/Misc (63).gif" style="height:40px; position:absolute; top:70px; left:390px; filter:drop-shadow(0px 0px 2px white)">
+<img src="Tła/Misc (63).gif" style="height:40px; position:absolute; top:70px; left:910px; filter:drop-shadow(0px 0px 2px white)">
+<img src="Tła/Misc (63).gif" style="height:40px; position:absolute; top:90px; left:340px; filter:drop-shadow(0px 0px 2px white)">
+<img src="Tła/Misc (63).gif" style="height:40px; position:absolute; top:90px; left:960px; filter:drop-shadow(0px 0px 2px white)">
+<img src="witraze/12.webp" style="height:100px; position:absolute; top:1110px; left:150px; rotate:50deg; z-index:10">
+<img src="witraze/12.webp" style="height:110px; position:absolute; top:155px; left:1120px; rotate:-60deg; z-index:10">
+</div>
+<div id="main">
+
+        <a href="Tworzywo.html" id="Back"> Powrót</a>
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+  });
+</script>
+<a href="Czarka1.html"><img id="Czarki" src="Moje/Ceramika/IMG_0121.JPG" style="height:300px; position:absolute; top:75px; left:60; rotate:0deg"></a>
+<a href="Czarka2.html"><img id="Czarki" src="Moje/Ceramika/IMG_0125.JPG" style="height:300px; position:absolute; top:50px; left:400; rotate:0deg"></a>
+<a href="Czarka3.html"><img id="Czarki" src="Moje/Ceramika/IMG_0156.JPG" style="height:300px; position:absolute; top:75px; left:740; rotate:0deg"></a>
+<img id="Ceramika" src="Moje/Ceramika/IMG_0160.JPG" style="height:265px; position:absolute; top:460px; left:355; ;">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0114.JPG" style="height:205px; position:absolute; top:590px; left:20;rotate:-90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0117.JPG" style="height:195px; position:absolute; top:480px; left:760; rotate:-90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0142.JPG" style="height:225px; position:absolute; top:820px; left:730;  rotate:90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0112.JPG" style="height:225px; position:absolute; top:980px; left:400 ;rotate:90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0113.JPG" style="height:233px; position:absolute; top:920px; left:70;  rotate:90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0110.JPG" style="height:225px; position:absolute; top:760px; left:380; rotate:90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0147.JPG" style="height:175px; position:absolute; top:1260px; left:320; rotate:0deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0118.JPG" style="height:255px; position:absolute; top:1200px; left:60; rotate:0deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0141.JPG" style="height:230px; position:absolute; top:1070px; left:780; rotate:90deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0119.JPG" style="height:215px; position:absolute; top:1350px; left:790;  rotate:0deg">
+<img id="Ceramika" src="Moje/Ceramika/IMG_0109.JPG" style="height:235px; position:absolute; top:1460px; left:520;  rotate:90deg">
+
+</div>
+
+
+<script>
+// include this line when the page loads
+document.querySelector("body").addEventListener("click", explodeOnClick);
+
+/**
+ * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
+ * e {Event} - object representing the 'click' of the page
+ **/
+function explodeOnClick(e) {
+    let toPopulate = document.createElement("div");
+    toPopulate.classList.add("explode");
+
+    toPopulate.style.top = e.clientY + "px";
+    toPopulate.style.left = e.clientX + "px";
+
+    document.querySelector("body").appendChild(toPopulate);
+
+    setTimeout(() => toPopulate.remove(), 5000);
+
+    // populate 1 star for testing
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        let newStar = document.createElement("p");
+        let j = 0;
+        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
+        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        newStar.textContent = "+";
+        toPopulate.appendChild(newStar);
+    
+        let timerId = setInterval(() => {
+          // Calculate new y position based on the parabolic equation
+          let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
+          let xTrans = xDirection * (xDistance * (j / 100)) + "px";
+          newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
+    
+          j += 1;
+        }, 25);
+    
+        setTimeout(() => {
+          clearInterval(timerId);
+          newStar.remove();
+        }, 5000);
+      }, Math.floor(i / 3) * 50);
+    }
+  }
+</script>
+
+ <audio autoplay loop>
+  
+  <source src="Audio/Guaranteed.flac" type="audio/mpeg">
+
+        </audio>
+
+</body>
+<style>
+
+
+.explode > p {
+  position: absolute;
+  cursor: inherit;
+}
+
+.explode {
+  transform: translate(-10px,-20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+
+/** Here's just stuff for the demo, to make the effect more obvious **/
+body {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: 'Verdana', 'Arial', sans-serif;
+
+
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+
+}
+Body{
+background-image: url("Tła/tumblr_inline_mlky878ojb1r53miq.png");
+    cursor: url('Kursor/cursor6.png'), auto;    
+}
+#main{
+width:80%;
+height:1900px;
+background-image: url("Tła/brown157.gif");
+background-size:11%;
+filter:drop-shadow(0px 0px 10px #52216B) contrast(110%);
+margin-left:140px;
+margin-top:180px;    
+border:6px black solid;
+    
+  }
+
+                          
+#Back{
+color:Brown; 
+text-align:center; 
+font-family: Cormorant Unicase, serif; 
+text-shadow: 2px 2px 2px; 
+margin-left:40px;
+position:relative;
+top:-140px;
+font-size:120%;
+  display:inline-block;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+color:Black;
+filter:drop-shadow(0px 0px 4px white);
+  animation: shake 0.5s infinite linear;
+cursor: url('Kursor/raven2_cursor.png'), auto;    
+}
+
+#Ceramika{
+ position:absolute; 
+ transition: transform 0.3s;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAACBUlEQVR4AcySAa4CIQxE9d//zv5Ok2egadeKuosBusy08Er8u/V/D0vNpsk+Mk+am7boO5tmvR7vgL4+7YcZHVBe4W4c2fyWb8fXowNaV5/oZKC8EJFXrLCiTx350Ucn4lNHxPeYgbqx23IESqddZl6COvbdeurS/CPQtOAqcQTlBWJn6JERnRjr2OMTq3PQY53rI6gLuy4CpVM6iazo5BHRidThs8cn4hPRySeie55AMbaOK6B0utrYUv0K6CrgR3UdUP+P2C3dl3g3j/Ptinp0QOvqEx2B8gKtzk5kg8f5BHri3etXCXQiH46q9CHlK5/+YnYS99mnj0kXqKu7LxkondERPaAT0d+N1MfIfejTuRnolLDLJgOtOkMnrvZAfYy8JPp0fgY6JeyyESgd0BFsoy4P/dtRZ2tyH+dL03RdoBhbR4GKWtPJN6KFR2wPgW7EVqN0QKfO6qOejr/Ac1d/kMf5daY5HVBLu36sgPISq/RL9Sugq4Af1QmU/0jVKTp5RHQiIPjs8Yn4RHTyieieJ1CMreMI6uRGSyf26QPdN8OCTox17PGJwxH+GfVY50kjqAu7LkegdNZl52WoY9+tpy7NPwJNC64SM1BegnjYqYFHnzqzfETfxWHBp444pNxuGeiUsMumA3o3WE06j1GeZtTZy9NkH6M8TbumHh3QuvpE5x8AAP//oo34NgAAAAZJREFUAwBClLZDIC/y4AAAAABJRU5ErkJggg==') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:brightness(103%) drop-shadow(0px 0px 3px white)
+}
+#Ceramika:hover{
+transform:scale(1.3);
+filter:brightness(110%) contrast(110%) drop-shadow(0px 0px 3px white);
+    cursor: url('Kursor/cursor6.png'), auto;    
+}
+
+#Czarki{
+ position:absolute; 
+ transition: transform 0.3s;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAVlJREFUWEftmDsPwjAMhOnAxM7//33sTAwgpKZCLsdnp2mSorAUtXlc7Ds/Mp3m3+N+e77/ni/XKb379kzj0jcab9f3zrN4FlDdA1UWssDtOGvtZFnvPDveWtruNx0GqLWMsghxMTpPUU29XwknuqESI3E+GygBbMXR5Empeq8olAiUWEg0SpRhoIqr5BHSAsXz4wH1ikJxda84uuJo90CjAZ/i6a864fMbcXpzZhpATfV2XItGRVTb9dmZqTlQr2W9qvaOI/WndYpVT15glEqxzKOTUdkWBRrdr1iurwZ0cBRMTRRYiYkmDI7OFx5kqHC7XDvgL64fZd5GEf1v9UTtbal2WfVc7vDUHVDqqymOUniJFiN2Paye6AC5qZcOJoHSFU70iobGe7ntrvD34mg2UHJxaY5GKdOMo2GglEJbu96d67sBStxU8c8egFoR5Tk1zx2eaIHaQF+KaO6EnoHBCgAAAABJRU5ErkJggg==') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+  }
+  
+#Czarki:hover{
+transform:scale(1.3);
+filter:brightness(110%) contrast(110%);
+cursor: url('Kursor/raven2_cursor.png'), auto;    
+}
+</style>
+</html>
