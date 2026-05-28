@@ -220,6 +220,23 @@ Clair de Lune Debussiego, i Nokturn op.27 no.2 F.Chopina.</p>
 
 
 
+<div id="FallenDown">
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:80px; margin-top:30px; font-size:120%;"> Fallen Down - Tobby Fox</p>
+
+ 
+  <iframe id="yt8" width="840" height="473" style="margin-left:30px;"
+    src="https://www.youtube.com/embed/2WRBBOd2XUs?si=HShUrpVJvJezEtW-&enablejsapi=1"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:95px; font-size:120%;">Filmik z 28 Maja 2026</p>
+  <p id="Więcej3">Lorem ipsum...<span id="dots3">...</span><span id="more3" style="display:none">erisque enim ...</span></p>
+  <button onclick="toggleMore(3)" id="myBtn3">Read more</button>
+</div>
+
+
+
 
 
 
@@ -235,7 +252,7 @@ Clair de Lune Debussiego, i Nokturn op.27 no.2 F.Chopina.</p>
   const bg = document.getElementById('bgMusic');
 
   // jeśli chcesz ręcznie listować id — dopasuj do swoich iframe
-  const ytIds = ['yt1', 'yt2', 'yt3','yt4','yt5','yt6','yt7'];
+  const ytIds = ['yt1', 'yt2', 'yt3','yt4','yt5','yt6','yt7', 'yt8'];
   const players = {};
 
   function onYouTubeIframeAPIReady() {
@@ -487,7 +504,7 @@ animation: borderChange 3s infinite;
 
     #główna{
 width:90%;
-height:9000px;
+height:10000px;
 background-image:url("Tła/tlo6.gif");
 background-size:10%;
 position:relative;
@@ -694,21 +711,6 @@ filter:drop-shadow(0px 0px 6px white);
  
 }
 
-#fallendown{
-width:900px;
-height:830px;
-position:absolute;
-left:150px;
-top:8180px;
-background-image:url("Tła/tlo10.png");
-background-size:25%;
-    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
-    border-width:  14px;
-    border-style:  solid; 
-filter:drop-shadow(0px 0px 6px white);
- 
-}
-
 
 #Gnossiennes1{
 width:900px;
@@ -742,6 +744,23 @@ filter:drop-shadow(0px 0px 6px white);
  
 }
 
+
+
+
+#FallenDown{
+width:900px;
+height:830px;
+position:absolute;
+left:150px;
+top:8700px;
+background-image:url("Tła/tlo10.png");
+background-size:25%;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABfUlEQVR4AdTXMW4DQQxD0dj3v7PT7EvxA2EWNhBE2xCUKI1IuPHzK9/r+lL+c3qd8fLwr0M1/hs+XQ4diEP1E1Z/4vbRQXW4J9HH9bm8eLUf6pNjfTjpuo9+qtuzJ1GO4OTs1Oecrvhu3z37EnW5JMqnRNTpYfe0bu6k09+XqMuLdY5D+vImOOk6R9f5fYnedcYpnBJQ797TXPX27Eu0TuusfU6n+t0+HZz27UtUgpDD4qlffXnny6vH9yU6/TbqeNJxfsLO432ne/YlOjniuA4/5dNed0Dv7EuUQ8gJrEP1T3Ha2zv2JdpkOLoc//y/Lu/ciXfeO52rbn+iHNZxOd1dPM3rQ3v3JtrfBkcTnvRTv/Um2P7eRE/O6rR6yVeHw0mn3r37Eq3TyVmd0nW+OhyaK1cv7kuUA8lA9TrXh3Q47Bxd6/T65XsS7eUc1bE6fLc/vWfv1N+T6JTM5GyqT3skBaub9tHr70nU5ZBjqA5bP3FzE5qHdDhck+g3AAAA//9O6YNxAAAABklEQVQDAAsQUGMTRSKpAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+filter:drop-shadow(0px 0px 6px white);
+ 
+}
 
 </style>
 </html>
