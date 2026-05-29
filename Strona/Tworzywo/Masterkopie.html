@@ -4,11 +4,13 @@
 
 
 
- <audio autoplay loop>
-  
-  <source src="Audio/Guaranteed.flac" type="audio/mpeg">
-
-        </audio>
+<audio id="player" autoplay loop preload="metadata" controls>
+  <source src="Audio/Guaranteed.mp3" type="audio/mpeg">
+  <source src="Audio/Guaranteed.ogg" type="audio/ogg">
+  <source src="Audio/Guaranteed.flac" type="audio/flac">
+  Twoja przeglądarka nie obsługuje audio.
+</audio>
+<script src="player-state.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,9 +73,9 @@
 <img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:0px; left:350px;">
 </div>
 <div id="main">
-<img id="szkic" src="Moje/Masterkopie/IMG_0070.JPG"; style="height:400px; position:absolute; top:440px; left:170px">
-<img id="szkic" src="Moje/Masterkopie/2.JPG" style="height:400px; position:absolute; top:440px; left:900px">
-<img id="szkic" src="Moje/Masterkopie/IMG_0065.JPG" style="height:400px;  position:absolute; top:440px; left:540px">
+<img id="szkic" src="Moje/Masterkopie/IMG_0070.JPG"; style="height:400px; position:absolute; top:460px; left:180px">
+<img id="szkic" src="Moje/Masterkopie/2.JPG" style="height:400px; position:absolute; top:460px; left:530px">
+<img id="szkic" src="Moje/Masterkopie/IMG_0065.JPG" style="height:400px;  position:absolute; top:460px; left:900px">
 
 
 
@@ -83,7 +85,7 @@
 <img id="szkic" src="Moje/Masterkopie/Magdalene-with-the-Smoking-Flame-Georges-de-La-Tour-37359062.jpg"
  style="height:420px; position:absolute; ; top:920px; left:530px; rotate: 0deg">
 
-<div id="szkic" style="padding:10px; position:absolute; width:340px; height:120px; top: 990px; left:860px; rotate: 0deg; background-color:white;">
+<div id="szkic" style="padding:10px; position:absolute; width:340px; height:120px; top: 990px; left:880px; rotate: 0deg; background-color:white;">
 <p style="font-size:120%; ">Jeden z wielu obrazów Edvarda Munch'a,<br> niestety nie udało mi się znaleść oryginału</p>
 
 
