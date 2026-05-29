@@ -1,36 +1,143 @@
 <html>
 <head>
 <title>Masterkopie</title>
+
+
+
+ <audio autoplay loop>
+  
+  <source src="Audio/Guaranteed.flac" type="audio/mpeg">
+
+        </audio>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Press+Start+2P&family=Tagesschrift&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-<div style="padding:10px; position:absolute; width:940px; height:220px; top: 140px; left:210px; rotate: 0deg; background-color:white;">
+ <a href="Tworzywo.html" id="Back"> Powrót</a>
+
+</a>
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+  });
+</script>
+
+<div style="padding:10px; position:absolute; width:940px; height:220px; top: 120px; left:205px; rotate: 0deg; background-image:url('Tła/1011.png'); background-size:10%; border:6px black double">
+<img src="Obrazki/ouroboros.jpg" style="height:200px; margin-left:360px; border-bottom:25px gray solid; border-top:15px gray solid; margin-top:-10px">
+
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:0px; left:0px">
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:90px; left:0px">
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:150px; left:0px">
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:0px; left:870px">
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:90px; left:870px">
+<img src="Obrazki/wp_acanthus_010_tn.gif" style="height:90px; position:absolute; top:150px; left:870px">
+
+
+
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:10px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:120px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:90px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:60px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:40px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:150px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:180px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:200px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:210px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:0px;"> 
+
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:10px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:120px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:90px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:60px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:40px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:150px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:180px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:200px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:210px; left:350px;">
+<img src="Obrazki/wp_acanthus_014_tn.gif" style="height:30px; position:absolute; top:0px; left:350px;">
 </div>
 <div id="main">
-<img id="szkic" src="Moje/Masterkopie/IMG_0070.JPG" style="height:400px;; top:420px; left:180px; rotate: 0deg">
-<img id="szkic" src="Moje/Masterkopie/2.JPG" style="height:400px;; top:420px; left:530px; rotate: 0deg">
-<img id="szkic" src="Moje/Masterkopie/IMG_0065.JPG" style="height:400px;; top:420px; left:880px; rotate: 0deg">
+<img id="szkic" src="Moje/Masterkopie/IMG_0070.JPG"; style="height:400px; position:absolute; top:440px; left:170px">
+<img id="szkic" src="Moje/Masterkopie/2.JPG" style="height:400px; position:absolute; top:440px; left:900px">
+<img id="szkic" src="Moje/Masterkopie/IMG_0065.JPG" style="height:400px;  position:absolute; top:440px; left:540px">
 
-<img id="szkic" src="Moje/Masterkopie/Johannes_Vermeer_(1632-1675)_-_The_Girl_With_The_Pearl_Earring_(1665)-1593138896.jpg" style="height:420px;; top:920px; left:180px; rotate: 0deg">
-<img id="szkic" src="Moje/Masterkopie/Magdalene-with-the-Smoking-Flame-Georges-de-La-Tour-37359062.jpg" style="height:420px;; top:920px; left:530px; rotate: 0deg">
-<div style="padding:10px; position:absolute; width:340px; height:120px; top: 990px; left:860px; rotate: 0deg; background-color:white;">
+
+
+<img id="szkic" src="Moje/Masterkopie/Johannes_Vermeer_(1632-1675)_-_The_Girl_With_The_Pearl_Earring_(1665)-1593138896.jpg"
+ style="height:420px;  position:absolute; top:920px; left:180px; rotate: 0deg">
+
+<img id="szkic" src="Moje/Masterkopie/Magdalene-with-the-Smoking-Flame-Georges-de-La-Tour-37359062.jpg"
+ style="height:420px; position:absolute; ; top:920px; left:530px; rotate: 0deg">
+
+<div id="szkic" style="padding:10px; position:absolute; width:340px; height:120px; top: 990px; left:860px; rotate: 0deg; background-color:white;">
 <p style="font-size:120%; ">Jeden z wielu obrazów Edvarda Munch'a,<br> niestety nie udało mi się znaleść oryginału</p>
+
+
 </div>
 </div>
 </body>
 <style>
+
+#Back{
+color:white;
+  font-family: "Luxurious Roman", serif;
+text-decoration:none;
+position:absolute;
+top:140px;
+left:1000px;
+font-size:110%;
+z-index:1
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-1px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-1px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:red;
+  filter:drop-shadow(0 0 4px white);
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
 Body {
-background-color:red;
+    cursor: url('Kursor/cursor6.png'), auto;   
+background-image:url('Tła/tlo2.jpg');
 }
 #Main{
-width:1100px;
+width:1140px;
 height:1200px;
-background-color:purple;
+background-image:url('Tła/tlo6.gif');
+background-size:10%;
 margin-top:390px;
-margin-left:130px;
+margin-left:100px;
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAA+klEQVR4AbSQQQ7CQAwDS///Z9BETORGW1gOVLJiT7I+9Hz+4TuP+B7vL1BbVh3CwFGgo0tzkZ5jsxOGMqev0gQcI5kThsxOmJJVqXA1+eXJZ86dvkpXh8n0Th6nJyNZlSaYnox8gFfJ0ncphywQHvGP7sQecY/w6lJKgYtf5nzXpS6cu6XeO3lXpQmAM8NWmnfmKp3/ZOZVIWzemas0D1zAduS9kzddSsgFeVfz3aWUf4Is4/hO3nCPzMwuzUV6jtA3lvsqTUABSqZ3zj0Zua9SwJ08dD+zPGeV8t8S4mVOGDI7YUpWpUDB9JnzJvn0XepiPoSjT3zuXgAAAP//hmV2egAAAAZJREFUAwDztB/mZNXNOAAAAABJRU5ErkJggg==') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+  
 }
 #szkic{
 position:absolute;
  transition: transform 0.5s;
+filter:drop-shadow(2px 2px 5px white)
 }
 #szkic:hover{
 transform:scale(1.3);
