@@ -168,9 +168,9 @@ D: Drawing "> </a>
 <div id="zajawki">
 <p style="text-align:center; text-shadow:2px 2px 1px white; font-size:110%">Aktualne zajawki:</p>
 
-<p style="margin-left:10px; color:purple; margin-top:-0px; text-shadow:1px 1px 2px yellow">Gitara</p>
-<p style="margin-left:10px; color:purple; margin-top:-20px; text-shadow:0px 0px 2px yellow">Tworzenie szafki na płyty</p>
-<p style=" margin-left:10px; color:purple; margin-top:-20px; text-shadow:0px 0px 2px yellow">Platonizm</p>
+<p id="dragi">Gitara</p>
+<p id="dragi" >Tworzenie szafki na płyty</p>
+<p id="dragi">Platonizm</p>
 
 
 
@@ -896,8 +896,10 @@ Księga gości do podpisania:</bold></p>
 </div id="guestbookdiv">
 
 <div id="meaninglesslife">
-<p id="Meaningleslifetekst" style="color:black; font-size:105%; text-align:center;  transition: transform 1.6s; margin-top:60px;   font-family: Gloock, serif; text-shadow:4px 4px 2px gray"> 
-Man cannot stand a meaningless life</p>
+<p id="Meaningleslifetekst" style="color:black; font-size:100%; text-align:left;  transition: transform 1.6s; margin-top:45px; margin-left:10px;   font-family: Gloock, serif; text-shadow:4px 4px 2px gray"> 
+
+Life of a man is of no greater importance to the universe than that of an oyster.<br>-David Hume
+</p>
 </div>
 
 
@@ -973,13 +975,25 @@ function explodeOnClick(e) {
 </script>
         <style>
 
+#dragi{
+
+margin-left:10px;
+ color:purple;
+ margin-top:-10px;
+text-shadow:1px 1px 2px yellow;
+}
+#dragi:hover{
+color:blue;
+text-shadow:1px 1px 2px yellow;
+}
+
 a{
   cursor: url('Kursor/raven2_cursor.png'), auto;
 }
 
 #meaninglesslife{
 height:160px;
-width:335px;
+width:360px;
 background-color:white;
 position:absolute;
 top:1210px;
@@ -1017,8 +1031,8 @@ main {
 
  body {
               
-    background-image:url('Obrazki/kostka.gif');
-background-size:4%;
+    background-image:url('Tła/raindrops.webp');
+background-size:5%;
     cursor: url('Kursor/cursor6.png'), auto;    
             }
 
@@ -1085,7 +1099,7 @@ filter: drop-shadow(0px 0px 4px white) opacity(0.8) contrast(95%);
 #header {
     width: 95%;              
     height: 100px;
-    margin-left:23px;
+    margin-left:23px;  
     background-image:url('Tła/21aa8c9e2a68b1d70b20cc3ff7a0b70c99c15cd3.gif');
     background-size: 8.5%;
     border:3px double purple;
@@ -1098,9 +1112,9 @@ filter: drop-shadow(0px 0px 4px white) opacity(0.8) contrast(95%);
 
       #navbar {
                 height: 80px;
-    background-image:url('Tła/stars.gif');
-background-size:15%;
-                padding:5px;
+  background-image:url('Obrazki/kostka.gif');
+background-size:5.5%;
+                padding:10px;
                 width: 98%;
                 display:block;
                 margin: 2px;
@@ -1109,7 +1123,7 @@ background-size:15%;
                 border: 7px double #4B4FA3; 
                 border-radius:1px;
                 padding:-5px;
-                text-shadow:2px 2px 5px ;
+                text-shadow:2px 2px 5px white;;
                 filter: brightness(170%) contrast(110%) saturate(80%) blur(0.5px);
                 font-family: "Cinzel", serif;
                 font-weight: 900;
@@ -1117,6 +1131,7 @@ background-size:15%;
                 font-size:110%;
                 animation: borderChange 3s infinite; 
 }
+
 
 @keyframes borderChange {
     0% {
@@ -1146,14 +1161,14 @@ background-size:15%;
 }
 
 #navbar li a {
-    color:#6782C5;
+    color:#2E2080;;
     font-weight: 2000;
     text-decoration: none;
                     
 }
 
 #navbar li a:hover {
-    color: #91BBE6;
+    color: black;
     text-decoration:underline;
     text-decoration: underline;
     text-decoration-line: underline;
@@ -1340,9 +1355,9 @@ margin-top:30px;
     color:white;
     position:absolute;
 
-    left:370;
+    left:30;
     top:180;
-    width:35%;
+    width:95%;
     filter: drop-shadow(2px 2px 4px black) blur(0.5px) opacity(0.9);
     font-family: "Cinzel", serif;
     font-style: bold;
@@ -1352,9 +1367,9 @@ margin-top:30px;
 #tekst_pod_oczami2{
     color:white;
     position:absolute;
-    left:370px;
+    left:30px;
     top:205;
-    width:35%;
+    width:95%;
     filter: drop-shadow(2px 2px 4px black) blur(0.5px) opacity(0.9);
     font-family: "Cinzel", serif;
     font-style:bold;
@@ -1517,7 +1532,7 @@ padding-bottom:10px;
 
 
 #Meaningleslifetekst:hover{
-transform:  scale(1.2);
+transform:  scale(1.06);
 text-decoration:underline;
     cursor: url('Kursor/cursor6.png'), auto;    
 }
