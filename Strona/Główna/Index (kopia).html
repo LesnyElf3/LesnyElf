@@ -900,7 +900,7 @@ Księga gości do podpisania:</bold></p>
 <div id="meaninglesslife">
 <p id="Meaningleslifetekst" style="color:black; font-size:100%; text-align:left;  transition: transform 1.6s; margin-top:45px; margin-left:10px;   font-family: Gloock, serif; text-shadow:4px 4px 2px gray"> 
 
-Life of a man is of no greater importance to the universe than that of an oyster.<br>-David Hume
+Tutaj coś będzie<br>-(napewno nie) David Hume
 </p>
 </div>
 
@@ -912,18 +912,7 @@ Life of a man is of no greater importance to the universe than that of an oyster
 </div>
 
 <div id="beatle">
-<iframe id="beatles" width="480" height="360" 
-
-
-    src="https://www.youtube.com/embed/vci6Wgk4U-s?enablejsapi=1"
-src="https://www.youtube.com/embed/6VcfBh3hWO4?si=wzGsxzCqugyMXUwH?enablejsapi=1" 
-
-
-
-
- title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/6VcfBh3hWO4?si=wzGsxzCqugyMXUwH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 
@@ -956,89 +945,11 @@ left:120px;">
 
     
 
-        <audio id="bgMusic"autoplay loop>
+        <audio autoplay loop>
   
   <source src="Audio/Undertale_ Waterfall - Piano Cover-[AudioTrimmer.com].mp3" type="audio/mpeg">
 
         </audio>
-
-
-
-
-<!-- YouTube IFrame API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  const bg = document.getElementById('bgMusic');
-
-  // jeśli chcesz ręcznie listować id — dopasuj do swoich iframe
-  const ytIds = ['beatles'];
-  const players = {};
-
-  function onYouTubeIframeAPIReady() {
-    ytIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return console.warn('iframe not found:', id);
-      players[id] = new YT.Player(id, {
-        events: { 'onStateChange': onPlayerStateChange }
-      });
-      console.log('YT.Player registered for', id);
-    });
-  }
-
-  function onPlayerStateChange(event) {
-    const id = event.target && event.target.getIframe ? event.target.getIframe().id : 'unknown';
-    const state = event.data;
-    console.log('YT state', id, state);
-    if (state === YT.PlayerState.PLAYING) {
-      if (bg && !bg.paused) bg.pause();
-    } else if (state === YT.PlayerState.PAUSED || state === YT.PlayerState.ENDED) {
-      setTimeout(() => {
-        const anyPlaying = Object.values(players).some(p => p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING);
-        if (!anyPlaying && bg) bg.play().catch(()=>{});
-      }, 200);
-    }
-  }
-
-  // MutationObserver: rejestruje dynamiczne iframe'y (jeśli dodajesz je później)
-  const mo = new MutationObserver(muts => {
-    muts.forEach(m => {
-      m.addedNodes && m.addedNodes.forEach(node => {
-        if (!node.querySelectorAll) return;
-        node.querySelectorAll('iframe').forEach(iframe => {
-          const id = iframe.id || (`yt_dyn_${Math.random().toString(36).slice(2)}`);
-          if (!iframe.id) iframe.id = id;
-          if (!ytIds.includes(id)) {
-            ytIds.push(id);
-            if (window.YT && YT.Player) {
-              players[id] = new YT.Player(id, { events: { 'onStateChange': onPlayerStateChange }});
-              console.log('YT.Player registered (dynamic) for', id);
-            }
-          }
-        });
-      });
-    });
-  });
-  mo.observe(document.body, { childList: true, subtree: true });
-
-  // toggleMore (jedna definicja)
-  function toggleMore(n) {
-    const dots = document.getElementById('dots' + n);
-    const moreText = document.getElementById('more' + n);
-    const btnText = document.getElementById('myBtn' + n);
-    if (!dots || !moreText || !btnText) return;
-    if (dots.style.display === 'none') {
-      dots.style.display = 'inline';
-      btnText.innerHTML = 'Read more';
-      moreText.style.display = 'none';
-    } else {
-      dots.style.display = 'none';
-      btnText.innerHTML = 'Read less';
-      moreText.style.display = 'inline';
-    }
-  }
-</script>
-</script>
 
   
 </div>
