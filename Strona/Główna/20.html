@@ -955,36 +955,12 @@ left:120px;">
   <source src="Audio/Undertale_ Waterfall - Piano Cover-[AudioTrimmer.com].mp3" type="audio/mpeg">
 </audio>
 
-<div id="beatle">
-  <iframe id="yt1"
-    width="480" height="360"
-    src="https://www.youtube.com/embed/6VcfBh3hWO4?enablejsapi=1"
-    title="YouTube video player"
-    frameborder="0"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
-</div>
-
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
   const bg = document.getElementById('bgMusic');
   const players = {};
   const ytIds = ['yt1']; // dodaj kolejne id iframe jeśli masz więcej
-
-  // jeśli autoplay zostanie zablokowane, uruchom po pierwszej interakcji
-  function tryPlayBg() {
-    if (!bg) return;
-    bg.play().catch(() => {});
-    window.removeEventListener('click', tryPlayBg);
-    window.removeEventListener('keydown', tryPlayBg);
-    window.removeEventListener('touchstart', tryPlayBg);
-  }
-  window.addEventListener('click', tryPlayBg, { once: true });
-  window.addEventListener('keydown', tryPlayBg, { once: true });
-  window.addEventListener('touchstart', tryPlayBg, { once: true });
 
   function onYouTubeIframeAPIReady() {
     ytIds.forEach(id => {
@@ -997,8 +973,20 @@ left:120px;">
   }
 
   function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-      if (bg && !bg.paused) bg.pause(); // wyłącz bgmusic dopiero gdy startuje YouTube
+    const state = event.data;
+
+    if (state === YT.PlayerState.PLAYING) {
+      if (bg && !bg.paused) bg.pause();
+    }
+
+    // Jeśli chcesz wracać muzyką dopiero gdy nic nie gra (opcjonalne):
+    if (state === YT.PlayerState.PAUSED || state === YT.PlayerState.ENDED) {
+      setTimeout(() => {
+        const anyPlaying = Object.values(players).some(p =>
+          p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING
+        );
+        if (!anyPlaying && bg) bg.play().catch(() => {});
+      }, 200);
     }
   }
 </script>
