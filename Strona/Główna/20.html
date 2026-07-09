@@ -911,14 +911,6 @@ Life of a man is of no greater importance to the universe than that of an oyster
 </p>
 </div>
 
-<div id="beatle">
-<iframe id="yt1" width="480" height="360" 
- src="https://www.youtube.com/embed/6VcfBh3hWO4?enablejsapi1"
-    title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 
 <div id="OBRAZ">
 
@@ -947,138 +939,54 @@ left:120px;">
          </footer>  
 </div>
 
-    
 
-        <audio id="bgMusic"autoplay loop>
-  
+<div id="beatle">
+  <iframe id="yt1"
+    width="480" height="360"
+    src="https://www.youtube.com/embed/6VcfBh3hWO4?enablejsapi=1"
+    title="YouTube video player"
+    frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen></iframe>
+</div>
+
+<audio id="bgMusic" loop>
   <source src="Audio/Undertale_ Waterfall - Piano Cover-[AudioTrimmer.com].mp3" type="audio/mpeg">
+</audio>
 
-        </audio>
-
-
-
-
-<!-- YouTube IFrame API -->
 <script src="https://www.youtube.com/iframe_api"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
   const bg = document.getElementById('bgMusic');
-
-  // jeśli chcesz ręcznie listować id — dopasuj do swoich iframe
-  const ytIds = ['yt1', 'yt2', 'yt3','yt4','yt5','yt6','yt7', 'yt8'];
   const players = {};
+  const ytIds = ['yt1']; // dodaj kolejne id iframe jeśli masz więcej
 
   function onYouTubeIframeAPIReady() {
     ytIds.forEach(id => {
       const el = document.getElementById(id);
-      if (!el) return console.warn('iframe not found:', id);
+      if (!el) return;
       players[id] = new YT.Player(id, {
-        events: { 'onStateChange': onPlayerStateChange }
+        events: { onStateChange: onPlayerStateChange }
       });
-      console.log('YT.Player registered for', id);
     });
   }
 
   function onPlayerStateChange(event) {
-    const id = event.target && event.target.getIframe ? event.target.getIframe().id : 'unknown';
     const state = event.data;
-    console.log('YT state', id, state);
+
     if (state === YT.PlayerState.PLAYING) {
       if (bg && !bg.paused) bg.pause();
-    } else if (state === YT.PlayerState.PAUSED || state === YT.PlayerState.ENDED) {
+    }
+
+    // Jeśli chcesz wracać muzyką dopiero gdy nic nie gra (opcjonalne):
+    if (state === YT.PlayerState.PAUSED || state === YT.PlayerState.ENDED) {
       setTimeout(() => {
-        const anyPlaying = Object.values(players).some(p => p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING);
-        if (!anyPlaying && bg) bg.play().catch(()=>{});
+        const anyPlaying = Object.values(players).some(p =>
+          p && p.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING
+        );
+        if (!anyPlaying && bg) bg.play().catch(() => {});
       }, 200);
-    }
-  }
-
-  // MutationObserver: rejestruje dynamiczne iframe'y (jeśli dodajesz je później)
-  const mo = new MutationObserver(muts => {
-    muts.forEach(m => {
-      m.addedNodes && m.addedNodes.forEach(node => {
-        if (!node.querySelectorAll) return;
-        node.querySelectorAll('iframe').forEach(iframe => {
-          const id = iframe.id || (`yt_dyn_${Math.random().toString(36).slice(2)}`);
-          if (!iframe.id) iframe.id = id;
-          if (!ytIds.includes(id)) {
-            ytIds.push(id);
-            if (window.YT && YT.Player) {
-              players[id] = new YT.Player(id, { events: { 'onStateChange': onPlayerStateChange }});
-              console.log('YT.Player registered (dynamic) for', id);
-            }
-          }
-        });
-      });
-    });
-  });
-  mo.observe(document.body, { childList: true, subtree: true });
-
-  // toggleMore (jedna definicja)
-  function toggleMore(n) {
-    const dots = document.getElementById('dots' + n);
-    const moreText = document.getElementById('more' + n);
-    const btnText = document.getElementById('myBtn' + n);
-    if (!dots || !moreText || !btnText) return;
-    if (dots.style.display === 'none') {
-      dots.style.display = 'inline';
-      btnText.innerHTML = 'Read more';
-      moreText.style.display = 'none';
-    } else {
-      dots.style.display = 'none';
-      btnText.innerHTML = 'Read less';
-      moreText.style.display = 'inline';
-    }
-  }
-</script>
-</script>
-
-  
-</div>
-</body>  
-<script>
-// include this line when the page loads
-document.querySelector("body").addEventListener("click", explodeOnClick);
-
-/**
- * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
- * e {Event} - object representing the 'click' of the page
- **/
-function explodeOnClick(e) {
-    let toPopulate = document.createElement("div");
-    toPopulate.classList.add("explode");
-
-    toPopulate.style.top = e.clientY + "px";
-    toPopulate.style.left = e.clientX + "px";
-
-    document.querySelector("body").appendChild(toPopulate);
-
-    setTimeout(() => toPopulate.remove(), 5000);
-
-    // populate 1 star for testing
-    for (let i = 0; i < 10; i++) {
-      setTimeout(() => {
-        let newStar = document.createElement("p");
-        let j = 0;
-        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
-        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
-        newStar.textContent = "+";
-        toPopulate.appendChild(newStar);
-    
-        let timerId = setInterval(() => {
-          // Calculate new y position based on the parabolic equation
-          let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
-          let xTrans = xDirection * (xDistance * (j / 100)) + "px";
-          newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
-    
-          j += 1;
-        }, 25);
-    
-        setTimeout(() => {
-          clearInterval(timerId);
-          newStar.remove();
-        }, 5000);
-      }, Math.floor(i / 3) * 50);
     }
   }
 </script>
