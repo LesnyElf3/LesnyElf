@@ -918,9 +918,10 @@ height:400;;
 width:340px;; 
 position:absolute;
 border:4px brown solid;
-top:1350px;
-left:120px;">
-<p style="background-color:white; color:black; text-align:center; position:absolute; top:1750; left:110px; width:30%; padding:5px"> Zdzisław Beksiński</p>
+top:1330px;
+left:120px;
+filter: drop-shadow(0px 0px 4px brown)">
+<p id="bks"style="    background-image:url('Tła/tlo7 (kopia).png');background-size:12%; border: 3px double brown; color:gray; text-shadow:2px 2px 4px red; text-align:center; position:absolute; top:1730; left:110px; width:30%; padding:5px;   "> Zdzisław Beksiński</p>
 </div>
 
 
@@ -949,6 +950,7 @@ src="https://www.youtube.com/embed/m4BuziKGMy4?enablejsapi1"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen></iframe>
 </div>
+<p id="kontrolki">kontrolki do wyciszenia muzyki w tle:</p>
 
 <audio id="bgMusic" autoplay loop controls>
   <source src="Audio/Undertale_ Waterfall - Piano Cover-[AudioTrimmer.com].mp3" type="audio/mpeg">
@@ -999,10 +1001,35 @@ src="https://www.youtube.com/embed/m4BuziKGMy4?enablejsapi1"
 
         <style>
 
+#bks{
+      font-family: "Jacquard 12", system-ui;
+font-size:140%;
+color:brown;
+margin-top:5px;
+margin-left:-10px;
+}
+
+
+#kontrolki{
+position:absolute;
+top:2470px;
+left:850px;
+width:290px;
+background-color:white;
+color:blue;
+font-family: "Cinzel", serif;
+font-size:90%;
+border:3px double blue;
+}
+
 #Bgmusic{
 position:absolute;
-top:2505px;
+top:2515px;
 left:840px;
+width:310px;
+height:30px;
+border:1.5px double brown;
+background-color:purple;
 }
 
 #beatle{
@@ -1291,7 +1318,7 @@ z-index:0;
     left:800px;
     width:380px;
     height:280px;
-    top:2220px;
+    top:2200px;
     border-top:22px  solid;
     border-bottom:22px solid;
     border-left:14px solid;
