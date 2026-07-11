@@ -942,7 +942,7 @@ left:120px;">
   <iframe id="yt1"
   referrerpolicy="strict-origin-when-cross-origin"
     width="450" height="330"
-src="https://www.youtube.com/embed/m4BuziKGMy4?si=enablejsapi1" 
+src="https://www.youtube.com/embed/m4BuziKGMy4?enablejsapi1" 
     title="YouTube video player"
     frameborder="0"
     allow="autoplay; encrypted-media; picture-in-picture"
@@ -958,35 +958,41 @@ src="https://www.youtube.com/embed/m4BuziKGMy4?si=enablejsapi1"
 
 <script>
   const bg = document.getElementById('bgMusic');
-  const players = {};
-  const ytIds = ['yt1'];
+  let bgStarted = false;
+
+  // start muzyki dopiero po "user gesture"
+  function ensureBgStarted() {
+    if (bgStarted) return;
+    bgStarted = true;
+    bg.play().catch(() => {});
+    window.removeEventListener('click', ensureBgStarted);
+    window.removeEventListener('touchstart', ensureBgStarted);
+  }
+  window.addEventListener('click', ensureBgStarted);
+  window.addEventListener('touchstart', ensureBgStarted);
+
+  let player;
 
   function onYouTubeIframeAPIReady() {
-    ytIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      players[id] = new YT.Player(id, {
-        events: { onStateChange: onPlayerStateChange }
-      });
+    player = new YT.Player('yt1', {
+      videoId: 'm4BuziKGMy4',
+      playerVars: { enablejsapi: 1 },
+      events: { onStateChange: onPlayerStateChange }
     });
   }
 
   function onPlayerStateChange(event) {
     const state = event.data;
 
-    // Gdy film startuje => stop muzyki
+    // gdy film startuje => zatrzymaj muzykę
     if (state === YT.PlayerState.PLAYING) {
-      bg && bg.pause();
+      bg.pause();
       return;
     }
 
-    // (opcjonalnie) gdy film pauzuje/kończy => wznów jeśli nigdzie nie gra
-    if (state === YT.PlayerState.PAUSED || state === YT.PlayerState.ENDED) {
-      const anyPlaying = Object.values(players).some(p =>
-        p?.getPlayerState && p.getPlayerState() === YT.PlayerState.PLAYING
-      );
-      if (!anyPlaying && bg) bg.play().catch(() => {});
+    // gdy film się skończy => wznow muzykę
+    if (state === YT.PlayerState.ENDED) {
+      bg.play().catch(() => {});
     }
   }
 </script>
