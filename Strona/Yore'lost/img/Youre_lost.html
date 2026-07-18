@@ -1,0 +1,42 @@
+<htmk>
+<head>
+<tutle></title>
+</head>
+<body>
+        <p id="Back">
+<a href="../Główna/Index.html" id="Back"> Powrót</a>
+</p>
+</body>
+<style>
+Body{
+background-color:black;
+}
+
+
+#Back{
+color:white; 
+margin-left:20px;
+position:absolute;
+top:10px;
+font-family:"Jacquard 24", system-ui;
+
+
+
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+color:#6c1a1a;
+filter:drop-shadow(0px 0px 4px white);
+  animation: shake 0.5s infinite linear;
+cursor: url('Kursor/raven2_cursor.png'), auto;    
+}
+
+</style>
+</html>

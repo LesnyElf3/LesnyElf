@@ -1,13 +1,55 @@
 <htmk>
 <head>
 <tutle></title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Tagesschrift&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
 </head>
 <body>
-<p style="color:blue; ">Piekne miejsca w internecie które uważam za godne polecenia:</p>
+        <p id="Back">
+<a href="../Główna/Index.html" id="Back"> Powrót</a>
+</p>
 </body>
 <style>
 Body{
 background-color:black;
 }
+
+
+#Back{
+color:white; 
+
+margin-left:20px;
+position:absolute;
+top:80px;
+
+
+
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-3px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-3px); }
+}
+
+#Back:hover{
+color:#6c1a1a;
+filter:drop-shadow(0px 0px 4px white);
+  animation: shake 0.5s infinite linear;
+cursor: url('Kursor/raven2_cursor.png'), auto;    
+}
+
 </style>
 </html>
