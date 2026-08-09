@@ -13,6 +13,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -69,6 +76,7 @@
 </script>
 </div>
 <div id="główna">
+<img src="Obrazki/oko.jpg" style="position:absolute; left:40; top:510; height:150px; border:2px white double">
 <img src="Obrazki/3.jpg" style="height:180px; width:; position:absolute; top:520px; left:330px; border:2px white solid;">
 <img src="Obrazki/witraz.jpg" style="height:160px; width:;position:absolute; top:500px; left:920px; border:2px white solid;">
 <img src="Obrazki/5.jpg" style="height:290px; width:; position:absolute; top:50px; left:960px;border:2px white solid;">
@@ -82,13 +90,18 @@
 <img src="Obrazki/eyes.png" style="height:30px; width:; position:absolute; top:410px; left:-20px; transform: scaleX(-1);   filter:drop-shadow(2px 2px 2px white);">
 
 
-<p id="tekst">Na tej podstronie widnieją filmiki mej osoby grającej na pianinie i udawającej poważnego,  dorosłego i pianistę. Na pianinie gram od końca Stycznia 2025. Aktualnie gram na pianinie cyfrowym Roland FP-10, ale pewnego dnia chciałbym mieć brązowe, drewniane pianino akustyczne z kinkietami na świeczki. Aktualnym wymarzonym utworem do nauczenia się jest dla mnie Ballada no.1 op.23 Chopina, a aktualnie uczę się nokturna op.48 no.1 (ktokolwiek to czyta, niech mi życzy powodzenia, nie wiem kiedy to skończę). </p><p id="tekst" style="position:absolute; top:170px;">P.S Lorem ipsum ersque enim kiedyś zastąpie poważnym tekstem na temat każdego z utworów które gram na danym filmiku. Jeżeli kogoś interesuje coś więcej na temat któregoś utworu, polecam kanał  <a style="color:#293B63"href="https://www.youtube.com/@gregniemczuk/featured" target="_blank" rel="nofollow">Grzegorza Niemczuka</a>, na którym znajdują się fantastyczne analizy utworów Fryderyka Chopina wraz z kontekstem historycznym i biogrficznym.</p>
+<p id="tekst">Na tej podstronie widnieją filmiki mej osoby grającej na pianinie i udawającej poważnego  dorosłego. Na pianinie gram od końca Stycznia 2025. Aktualnie gram na pianinie cyfrowym Roland FP-10, ale pewnego dnia chciałbym mieć brązowe, drewniane pianino akustyczne z kinkietami na świeczki. Aktualnym wymarzonym utworem do nauczenia się jest dla mnie Ballada no.1 op.23 Chopina, a aktualnie uczę się nokturna op.48 no.1 (ktokolwiek to czyta, niech mi życzy powodzenia, nie wiem kiedy to skończę). </p><p id="tekst" style="position:absolute; top:170px;">P.S Lorem ipsum ersque enim kiedyś zastąpie poważnym tekstem na temat każdego z utworów które gram na danym filmiku. Jeżeli kogoś interesuje coś więcej na temat któregoś utworu, polecam kanał  <a style="color:#293B63"href="https://www.youtube.com/@gregniemczuk/featured" target="_blank" rel="nofollow">Grzegorza Niemczuka</a>, na którym znajdują się fantastyczne analizy utworów Fryderyka Chopina wraz z kontekstem historycznym i biogrficznym.</p>
 <p id="tekst" style="position:fixed; top:275px;">Filmiki wrzucone na jutuba, ponieważ github żąda pieniędzy za hostowanie większych nagrań, a jutubowi wystarczy dusza i dane osobowe.</p>
 </div>
 
 <div id="progres">
   <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:70px; font-size:120%;">Aktualanie uczę się nokturna op.48 no.1. Aktualny progres: </p>
-  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:95px; font-size:120%;">stan na [...] Filmik w przyszłości (prawdopodobnie) 2026</p>
+ <iframe id="yt9" width="840" height="473" style="margin-left:30px;"
+  src="https://www.youtube.com/embed/IWga8vKNQvg?enablejsapi=1"
+  title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <p style="font-family: Almendra, serif; color:white; text-shadow:1px 1px 2px white; margin-left:350px; margin-top:95px; font-size:120%;">Stan na 9 sierpnia 2026</p>
 <p id="Więcej3">Lorem ipsum...<span id="dots3">...</span><span id="more3" style="display:none">erisque enim ...</span></p>
   <button onclick="toggleMore(3)" id="myBtn3">Read more</button>
 </div>
@@ -250,7 +263,7 @@
   const bg = document.getElementById('bgMusic');
 
   // jeśli chcesz ręcznie listować id — dopasuj do swoich iframe
-  const ytIds = ['yt1', 'yt2', 'yt3','yt4','yt5','yt6','yt7', 'yt8'];
+  const ytIds = ['yt1', 'yt2', 'yt3','yt4','yt5','yt6','yt7', 'yt8', 'yt9'];
   const players = {};
 
   function onYouTubeIframeAPIReady() {
@@ -521,6 +534,14 @@ filter: sepia(100%) blurr(7px)
 filter: sepia(0%) blurr(0px)
 }
 
+#yt9{
+filter: sepia(100%) blurr(7px)
+}
+
+#yt9:hover{
+filter: sepia(0%) blurr(0px)
+}
+
 
 
   #more1, #more2, #more3, #more4, #more5 { display: none; }
@@ -598,9 +619,11 @@ filter: brightness(110%) drop-shadow(0px 0px 6px #302699);
     #tekst{
 color:#ECE9F7;
 text-shadow:0px 0px 2px white;
-font-size:98%;
+font-size:100%;
 font-weight:600;
-font-family: "Almendra", serif;
+ font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
 text-indent: 50px;
 line-height: 1.4;
 letter-spacing:1.2px;
