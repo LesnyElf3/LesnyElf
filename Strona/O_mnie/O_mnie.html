@@ -51,17 +51,17 @@ l
 <img src="Obrazki/kit6.gif" style="position:absolute; left:-30; top:850; height:70px; width:112%" >
 <img src="Obrazki/kit3.gif" style="position:absolute; left:370; top:360; height:115px; filter: saturate(120%) drop-shadow(0px 0px 1.5px white)">
 
- <h3 style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:354px; left:60px;">
-  Me with a
+ <h3 style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px; position:absolute; bottom:354px; left:80px;">
+Ja z 
 </h3>
 <p id="Luna" style="display:inline; margin:0; position:absolute; bottom:370px; left:120px;">
-  <a id="Luna2" href="../Luna/Luna.html">kitty</a>
+  <a id="Luna2" href="../Luna/Luna.html">kitem</a>
 </p>
 
-<p style="color:white; text-align:center; text-shadow: 2px 2px 2px red; position:absolute; bottom:635px; left:315px; font-size:105% ;font-family: Almendra, serif;">Forever favourites:</p>
+<p style="color:white; text-align:center; text-shadow: 2px 2px 2px red; position:absolute; bottom:635px; left:315px; font-size:105% ;font-family: Almendra, serif;">Na zawsze ulubione/forever favourites?:</p>
 <p style="color:white; text-align:center; font-family: Cormorant Unicase, serif; text-shadow: 2px 2px 2px red; position:absolute; bottom:570px; left:300px; font-size:105%;
    text-indent: 140px; font-family: Almendra, serif;">
- Głęboki sen (fale delta), muzyka, drzewa, cisza, woda oraz mili i piękni w duchu ludzie
+ Głęboki sen (fale delta), muzyka, drzewa, woda, cisza oraz piękni w duchu ludzie
 </p>
 
 
@@ -145,13 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="ja"> 
     </body>
 <script>
-// include this line when the page loads
+
 document.querySelector("body").addEventListener("click", explodeOnClick);
 
-/**
- * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
- * e {Event} - object representing the 'click' of the page
- **/
+
 function explodeOnClick(e) {
     let toPopulate = document.createElement("div");
     toPopulate.classList.add("explode");
@@ -168,8 +165,8 @@ function explodeOnClick(e) {
       setTimeout(() => {
         let newStar = document.createElement("p");
         let j = 0;
-        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
-        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        let xDirection = Math.random() < 0.5 ? -1 : 1; 
+        let xDistance = Math.random() * 100; 
         newStar.textContent = "+";
         toPopulate.appendChild(newStar);
     
@@ -204,7 +201,7 @@ function explodeOnClick(e) {
 }
 
 
-/** Here's just stuff for the demo, to make the effect more obvious **/
+
 body {
   background-color: black;
   color: white;
@@ -341,7 +338,7 @@ z-index:1;
     font-weight: 600; 
     position:absolute;
     top:-13px;
-    left:20px;
+    left:-10px;
     text-decoration:none;
     font-size: 135%;
 }
