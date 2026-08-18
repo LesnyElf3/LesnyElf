@@ -23,12 +23,12 @@
   const audio = document.getElementById('backSound');
 
   backLink.addEventListener('click', function(e) {
-    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    e.preventDefault();           
     audio.currentTime = 0;
-    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    audio.play().catch(()=>{});   
     setTimeout(() => {
       window.location.href = backLink.href;
-    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+    }, 1000); 
   });
 </script>
 <img src="Obrazki/drzewieckit.jpg" style="width:180px; position:absolute; top:0px; left:-2px; filter:brightness(85%) saturate(90%)">
@@ -82,13 +82,10 @@
 
 </body>
 <script>
-// include this line when the page loads
+
 document.querySelector("body").addEventListener("click", explodeOnClick);
 
-/**
- * Creates a container at the point of the page where the user clicked.  Populates that container with little "+" signs, sets an interval timer which regularly calculates the point on a curve give the time passed (x), updates the position of each '+' sign to be at the calculated position (given the time that's passed). 
- * e {Event} - object representing the 'click' of the page
- **/
+
 function explodeOnClick(e) {
     let toPopulate = document.createElement("div");
     toPopulate.classList.add("explode");
@@ -100,18 +97,18 @@ function explodeOnClick(e) {
 
     setTimeout(() => toPopulate.remove(), 5000);
 
-    // populate 1 star for testing
+
     for (let i = 0; i < 10; i++) {
       setTimeout(() => {
         let newStar = document.createElement("p");
         let j = 0;
-        let xDirection = Math.random() < 0.5 ? -1 : 1; // left or right
-        let xDistance = Math.random() * 100; // Random distance between 0 to 100px for where to fall
+        let xDirection = Math.random() < 0.5 ? -1 : 1; 
+        let xDistance = Math.random() * 100; 
         newStar.textContent = "+";
         toPopulate.appendChild(newStar);
     
         let timerId = setInterval(() => {
-          // Calculate new y position based on the parabolic equation
+
           let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
           let xTrans = xDirection * (xDistance * (j / 100)) + "px";
           newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
@@ -129,7 +126,7 @@ function explodeOnClick(e) {
 </script>
 <style>
 
-/** This stuff is necessary !! **/
+
 .explode > p {
   position: absolute;
   cursor: inherit;
@@ -142,7 +139,7 @@ function explodeOnClick(e) {
 }
 
 
-/** Here's just stuff for the demo, to make the effect more obvious **/
+
 body {
   background-color: black;
   color: white;

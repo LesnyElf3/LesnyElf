@@ -27,12 +27,12 @@
   const audio = document.getElementById('backSound');
 
   backLink.addEventListener('click', function(e) {
-    e.preventDefault();           // zatrzymaj natychmiastowe przejście
+    e.preventDefault();           
     audio.currentTime = 0;
-    audio.play().catch(()=>{});   // odtwórz na gest użytkownika
+    audio.play().catch(()=>{}); 
     setTimeout(() => {
       window.location.href = backLink.href;
-    }, 1000); // 1000 ms = 1 sekunda, zmień jeśli chcesz krócej/dłużej
+    }, 1000); 
   });
 </script>
         <p id="Nagłówek">O mnie</p>
@@ -74,7 +74,7 @@ Ja z
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // LUNA
+
   const lunaLink = document.getElementById('Luna2');
   const lunaAudio = document.getElementById('clickSound');
   if (lunaLink && lunaAudio) {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // BACK
+
   const backLink = document.getElementById('Back');
   const backAudio = document.getElementById('backSound');
   if (backLink && backAudio) {
@@ -160,7 +160,7 @@ function explodeOnClick(e) {
 
     setTimeout(() => toPopulate.remove(), 5000);
 
-    // populate 1 star for testing
+
     for (let i = 0; i < 10; i++) {
       setTimeout(() => {
         let newStar = document.createElement("p");
@@ -171,7 +171,7 @@ function explodeOnClick(e) {
         toPopulate.appendChild(newStar);
     
         let timerId = setInterval(() => {
-          // Calculate new y position based on the parabolic equation
+
           let yTrans = -(-(1 / 40) * (j - 20) ** 2 + 10) + "px";
           let xTrans = xDirection * (xDistance * (j / 100)) + "px";
           newStar.style.transform = `translateX(${xTrans}) translateY(${yTrans})`;
@@ -188,7 +188,7 @@ function explodeOnClick(e) {
   }
 </script>
 <style>
-/** This stuff is necessary !! **/
+
 .explode > p {
   position: absolute;
   cursor: inherit;
@@ -291,7 +291,7 @@ transform:  scale(10);
 }
 
   :root {
-    --borderwidth: 40px; /* Zdefiniuj zmienną w :root */
+    --borderwidth: 40px; 
 }
 
 #O-mnie {
@@ -321,7 +321,7 @@ z-index:1;
     top:485px;
     margin-left:400px;
     font-size: 135%;
-    animation: floating 3s infinite ease-in-out; /* Ta sama linia animująca */
+    animation: floating 3s infinite ease-in-out; 
 }
 
 @keyframes floating {
@@ -390,15 +390,15 @@ position:absolute;
 top:510px;
 left:850px;
 border:6px double #8A3917;
-animation: borderChange 2s infinite; /* Dodanie animacji */
+animation: borderChange 2s infinite; 
 }
 
 @keyframes borderChange {
     0% {
-        border-color: #8A3917; /* Kolor początkowy */
+        border-color: #8A3917; 
     }
     50% {
-        border-color: #7D0000; /* Kolor w połowie trwania */   
+        border-color: #7D0000;  
     }
 }
 
