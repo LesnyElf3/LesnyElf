@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Zimorodek</title>
+<link rel="icon" href="Obrazki/.jpg" type="image/jpg">
+</head>
+<body>
+ <a href="../Główna/Index.html" id="Back"> Powrót</a>
+
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sek
+  });
+</script>
+
+*/--------------------------------------------------------------------------------------------------------------------------
+
+<div id="header">
+</div>
+
+
+<div id="Main">
+</div>
+
+
+
+</body>
+<style>
+
+
+Body {
+cursor: url('Kursor/cursor6.png'), auto;   
+background-image:url('Tła/.jpg');
+background-color:black;
+}
+
+#Main{
+width:1000px;
+height:1100px;
+background-image:url('Tła/1011.png');
+background-size:15%;
+position:absolute;
+top:140px;
+left:190px;
+}
+
+#header{
+width:1000px;
+height:120px;
+background-color:blue;
+background-size:15%;
+position:absolute;
+top:4px;
+left:190px;
+}
+
+
+
+#Back{
+color:blue;
+text-decoration:none;
+position:absolute;
+top:0px;
+left:0px;
+font-size:100%;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-1px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-1px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:black;
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+</style>
+</html>
