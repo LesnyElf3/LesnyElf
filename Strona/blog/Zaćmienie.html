@@ -1,0 +1,266 @@
+<html>
+<head>
+<title>Zaćmienie</title>
+
+<link rel="icon" href="Obrazki/Pinterest/3.jpg" type="image/jpg">
+
+<audio id="bgMusic" autoplay loop >
+  <source src="Audio/mp3" type="audio/mpeg">
+</audio>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caesar+Dressing&family=Fredericka+the+Great&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+<img src="Obrazki/Pinterest/back.png" style="height:60px; position:absolute; top:240px; left:10px;  filter:drop-shadow(0px 0px 4px #516E4E)">
+
+ <a href="Menu.html" id="Back"> Powrót</a>
+
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sek
+  });
+</script>
+
+*/--------------------------------------------------------------------------------------------------------------------------
+
+<div id="header">
+<p id="nagłówek">Zacmienie</p>
+<img src="Obrazki/Pinterest/.jpg" style="height:60px; position:absolute; top:50px; left:1015px;  filter:drop-shadow(0px 0px 4px #516E4E)">
+
+</div>
+
+
+
+<div id="Main">
+
+
+<div id="divztekstemnr1">
+<p id="tekstnr1">
+12 Sierpnia 2026 odbyło sie całkowite zaćmienie słońca, które miałem przywilej obserwować w znakomitych warunkach nad zaporą aż do samego maksimum, ponieważ nic nie zasłaniało tego trudnego w obserwacji zaćmienia. Było to najłębsze zaćmienie od 1999 widoczne z Polski i nagłębsze do 20xx roku, niesamowita sprawa. Miejscówka pod względem wizualnym była idealna, jedyym mankamentem była masa ludzi, co nie powinno dziwić. Udało mi się zrobić kilka przyzwoitych, choć nieidalnych zdjęć, które zamieszczam poniżej. Jako filtra po raz pierwszy, eksperymentlanie użyłem okopconej szybki (zdaję sobie sprawę z tego jak nieprofesjonalne to jest), która o dziwo bardzo dobrze spisała się w początkowych fazach zaćmienia, kiedy słońce było jeszcze tak jasne, że normalnie nie byłoby możliwości zrobić jakkolwiek wyraźnych zdjęć. 
+</p>
+</div>
+
+
+<img src="Obrazki/Pinterest/.jpg" style="height:240px; position:absolute; top:800px; left:700px; border:0px double black; filter:drop-shadow(0px 0px 0px black)">
+
+
+<img src="Obrazki/Zimorodek/1.jpg"  id="zdj"style="height:420px; position:absolute; top:1400px; left:150px;">
+<img src="Obrazki/Zimorodek/2.jpg"  id="zdj"style="height:420px; position:absolute; top:1900px; left:150;">
+<img src="Obrazki/Zimorodek/3.jpg"  id="zdj"style="height:420px; position:absolute; top:2400px; left:150;">
+<img src="Obrazki/Zimorodek/4.jpg"  id="zdj"style="height:420px; position:absolute; top:2900px; left:150px;">
+<img src="Obrazki/Zimorodek/5.jpg"  id="zdj"style="height:420px; position:absolute; top:3400; left:150;">
+<img src="Obrazki/Zimorodek/6.jpg"  id="zdj"style="height:420px; position:absolute; top:3900; left:150;">
+<img src="Obrazki/Zimorodek/7.jpg"  id="zdj"style="height:420px; position:absolute; top:4400; left:150px;">
+<img src="Obrazki/Zimorodek/8.jpg"  id="zdj"style="height:420px; position:absolute; top:4900; left:150;">
+<img src="Obrazki/Zimorodek/9.jpg" id="zdj"style="height:420px; position:absolute; top:5400px; left:150;">
+
+<video  controls id="video"style="height:400px; position:absolute; top:1290px; left:170; ">
+  <source src="Obrazki/Zimorodek/video.mp4" type="video/mp4">
+</video>
+
+
+
+
+
+
+<footer id="footer"></footer>
+
+</body>
+<style>
+
+#video{
+filter: grayscale(100) drop-shadow(2px 2px 4px #425E39) ;
+border:4px #425E39 double;
+border-radius:3px;
+}
+
+#video:hover{
+filter: grayscale(0)
+}
+
+a{
+color:yellow;
+text-decoration:underline wavy
+}
+
+a:hover{
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+#footer{
+height:720px; 
+margin-top:8050px;
+background-image:url('Tła/num.gif');
+border-top:white double 4px;
+}
+
+Body {
+cursor: url('Kursor/cursor6.png'), auto;   
+background-image:url('Tła/bkgtile.gif');
+background-size:10%
+}
+
+#nagłówek{
+font-size:140%;
+text-align:center;
+ font-family: "Caesar Dressing", system-ui;
+  font-weight: 400;
+color:white;
+text-shadow:0px 0px 3px black
+}
+
+#zdj{
+transition: transform 7s;
+border:0px double #425E39;
+border-radius:3px;
+filter:drop-shadow(0px 0px 0px ) ;
+margin-top:400px;
+
+}
+
+#zdj:hover{
+transform:scale(1.20);
+filter:  saturate(100%) brightness(110%);
+}
+
+#tekstnr1{
+  text-indent:30px;
+  font-weight: 800;
+  font-style: normal;
+font-size:115%;
+text-shadow:1px 1px 2px white;;
+color:  black;
+text-indent:40px;
+  font-family: "Fredericka the Great", serif;
+}
+
+#divztekstemnr1{
+position:absolute;
+top:120px;
+left:20px;
+width:400px;
+height:960px;
+background-color:#3C2C63;
+filter:drop-shadow(2px 2px 4px black) brightness(105%);
+padding:10px; 
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAjUlEQVQ4T7WUUQ7AIAhD5/0PvY0lJgoCLdP9LdHXUhvadeBrReb93nPvotAQoo0h0A6EwQhUjMBAOYxCxwlTgQiqx/b+zVt3aKrOtMRzKiJZPKORyVQlU23atENDXfXF+JBTuo9ezn+dLnPfkanp8NGeRjWkO8yODwkwULgdDBTeVhkUGreypJld8p19AKDIJhZpk1q6AAAAAElFTkSuQmCC') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+
+  }
+  
+
+
+#divztekstemnr2{
+position:absolute;
+filter:drop-shadow(2px 2px 4px black) brightness(105%);
+top:550px;
+left:270px;
+width:640px;
+height:370px;
+background-color:#225322;;
+padding:10px;
+  text-align: right;
+  border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAjUlEQVQ4T7WUUQ7AIAhD5/0PvY0lJgoCLdP9LdHXUhvadeBrReb93nPvotAQoo0h0A6EwQhUjMBAOYxCxwlTgQiqx/b+zVt3aKrOtMRzKiJZPKORyVQlU23atENDXfXF+JBTuo9ezn+dLnPfkanp8NGeRjWkO8yODwkwULgdDBTeVhkUGreypJld8p19AKDIJhZpk1q6AAAAAElFTkSuQmCC') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+  }
+  
+
+#divztekstemnr3{
+position:absolute;
+filter:drop-shadow(2px 2px 4px black) brightness(100%);
+top:1030px;
+left:60px;
+width:520px;
+height:215px;
+background-color:#315431;;
+padding:10px;
+  border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAjUlEQVQ4T7WUUQ7AIAhD5/0PvY0lJgoCLdP9LdHXUhvadeBrReb93nPvotAQoo0h0A6EwQhUjMBAOYxCxwlTgQiqx/b+zVt3aKrOtMRzKiJZPKORyVQlU23atENDXfXF+JBTuo9ezn+dLnPfkanp8NGeRjWkO8yODwkwULgdDBTeVhkUGreypJld8p19AKDIJhZpk1q6AAAAAElFTkSuQmCC') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+
+  }
+  
+
+#Main{
+width:970px;
+height:1160px;
+background-image:url('Tła/2.jpg');
+background-size:12%;
+position:absolute;
+top:153px;
+left:200px;
+
+filter:drop-shadow(1px 1px 6px #595C33) brightness(105%);
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAVVJREFUWEfdmNENwjAMRMuO/DIGUzAGv+wIElIQMjq9c3FJTT/TNj6f7XPiw9LkOTTBuSDQ2+V0f3fmeL4+/4nr0eHsd0RYf6CDscHM8FitR0ZUJOI+KhJxXTK6e6AEcHgamVZMZSOi7H8w+jdAs9XsqoPK8WEvzeh0oKSXKidJ/+i9a/fFqPsDGc6+d+1+AFWh3YpRVy36A812omzIaf8ok5JR2mgtMJIhZXc3xUQdrB9Qt/qqQk6pJXO0DdDoAZ0nq5htI/hfA6UcqmLUTbnpOtoGqFsb0xltC9RuodTKtioisiuvInTbrAKclie3+qoAkj37mPfrzkQ3i+kn/LKqVyGKKbD2Gk1FNOygju4OqNvbZ4187EkJOeIWH31nD8ko1CqnXN2liKj5Ac5HVdGQDiq9LQeqrrUKwNqqdyOBM3xKhWjIHTNSrkZCbKDVrTO7XxugDzQ2UEkwP3RvAAAAAElFTkSuQmCC') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+  }
+  
+  
+
+#header{
+width:80%;
+height:125px;
+background-image:url('Tła/577e0ddb-e4e2-4f2b-ade4-30e3f61d93fd.webp');
+background-color:;
+background-size:16%;
+filter: hue-rotate(270deg) saturate(70%) brightness(90%);
+position:absolute;
+top:0px;
+left:170px;
+
+
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAFaADAAQAAAABAAAAFQAAAAAIGxIOAAAAuUlEQVQ4Ee1V0QrDIBBr+0/7o7KPGv2jftRKhIwYvKsK29OE4plL0jsRXRcbz+PxVui1n6uu7/LKLbELACqmMcUtjLl0HhWW1jIR2wdH46iKwskMXdjDBWdTYSQijioYZ7rKVImIYYCPbQOLjJHjCE1ppoYU3RmHpjSYmf+mM7uWa367p9GxaZ1drzut1I2zs1sZg1gBjUUPhzJwv3NL8Q8980jFH79IpLjGFDpWvT8gOQGYXyrO8fwFwg5+HQRqbKcAAAAASUVORK5CYII=') 7 /  7px / 0 round;
+    border-width:  7px;
+    border-style:  solid; 
+  }
+  
+  
+
+
+
+#Back{
+color:#A4B3E5;
+text-decoration:none;
+position:absolute;
+top:170px;
+left:70px;
+font-size:100%;
+z-index:1;
+background-color: #1E2F66;
+padding:6px;
+border:1px #8195DA solid; 
+border-radius:20px;
+ font-family: "Caesar Dressing", system-ui;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-1px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-1px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:black;
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+
+</style>
+</html>
