@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Syzyf</title>
+<link rel="icon" href="Obrazki/.jpg" type="image/jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amarante&family=Fredericka+the+Great&family=Rubik+Scribble&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ <a href="Menu.html" id="Back"> Powrót</a>
+
+<audio id="backSound" src="Audio/au.mp3" preload="auto"></audio>
+
+
+<audio id="bgMusic" autoplay loop >
+  <source src="Audio/Float Up from Dream.mp3" type="audio/mpeg">
+</audio>
+
+<div id="div">
+<img src="Obrazki/Pinterest/Syzyf.jpg" style="height:250px; margin-left:470px; margin-top:40px; border:6px double black; filter:drop-shadow(2px 2px 6px brown);">
+</div>
+<script>
+  const backLink = document.getElementById('Back');
+  const audio = document.getElementById('backSound');
+
+  backLink.addEventListener('click', function(e) {
+    e.preventDefault();           
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});   
+    setTimeout(() => {
+      window.location.href = backLink.href;
+    }, 1000); // 1000 ms = 1 sek
+  });
+</script>
+
+
+</body>
+<style>
+
+Body {
+background-image:url('Tła/1011.jpg');
+    cursor: url('Kursor/cursor6.png'), auto;   
+background-size:10%;
+}
+
+
+
+#div{
+height:320px;
+width:85%;
+position:absolute;
+top:150px;
+left:80px;
+background-color:#394528;
+filter:drop-shadow(0px 0px 4px yellow);
+    border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAKqADAAQAAAABAAAAKgAAAADUGqULAAABQElEQVRYCdWY0Q3CMAxEW9TpGIkBGIn1QEV6qHJ1imOltMePm8bn+J7zAcyP+/SeOj7P1zSv6f/S0dqNh6vHhQYhxTpGRfAoHedzrh/R6IB1ixh5OGdd1Sm9L1HliPetmCUZ66CLkyHPn6hyhkMVqzrqQZY10ZeocoQzFas66rUmYUN0bjnB8ejYOwEfor2kmEAvEc5BzzobbYguWYdVgopYth79+RDFsXKII/JGR1U/9mNDdNfo6lC5HE1zW28lGClu93eNbjev9Pz7zRSbOoPq2oOi6ktUOYrER69bE/Qj2nI0miD1shO0Ifr9Hwl3mXgWeRui5W9P2bvFlJhEVedDFMfKKSTIi7G1X60bdX5EIQWh6Ih9FWM+dVQ+77M6X6I4zRIhn3iUzpdovDOQysaqvqXzI1q9W5Cu6rM6G6IfLnV2ffXe8QEAAAAASUVORK5CYII=') 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; 
+  }
+  
+
+#Back{
+color:#877E31;
+  font-family: "Amarante", serif;
+text-align:center;
+background-color:#5E5B40;
+border:2px double black;
+border-radius:6px;
+text-shadow:0px 0px 3px black;
+padding:3px;
+width:80px;
+text-decoration:none;
+position:absolute;
+top:20px;
+left:680px;
+font-size:100%;
+z-index:1;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-1px); }
+  50%     { transform: translateX(2px); }
+  75%     { transform: translateX(-1px); }
+}
+
+#Back:hover{
+  animation: shake 0.5s infinite linear;
+  color:white;
+text-shadow:0px 0px 4px #877E31;
+  cursor: url('Kursor/raven2_cursor.png'), auto;
+}
+
+
+</style>
+</html>
